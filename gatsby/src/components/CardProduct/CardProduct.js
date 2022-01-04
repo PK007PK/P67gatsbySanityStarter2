@@ -6,7 +6,7 @@ import { CardProductStyles } from './CardProduct.styles.js';
 const CardProduct = ({ data, className, small }) => {
     const query = useStaticQuery(graphql`
         {
-            sanitySiteTechConfig {
+            sanityBlogConfig {
                 blankImgPLaceholder {
                     asset {
                         gatsbyImageData
@@ -16,7 +16,7 @@ const CardProduct = ({ data, className, small }) => {
         }
     `);
     const {
-        sanitySiteTechConfig: {
+        sanityBlogConfig: {
             blankImgPLaceholder: {
                 asset: { gatsbyImageData: placeholder },
             },

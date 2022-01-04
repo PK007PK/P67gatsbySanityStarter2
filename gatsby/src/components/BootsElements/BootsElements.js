@@ -39,8 +39,9 @@ export const BootsContainer = styled.div`
 
 export const BootsRow = styled.div`
     display: flex;
+    width: 100%;
     flex-wrap: wrap;
-    margin: 0px -15px;
+    margin: 0px;
     position: relative;
     justify-content: ${({ between }) => (between ? 'space-between' : 'flex-start')};
 `;

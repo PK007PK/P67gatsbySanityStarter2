@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { MenuItemsWrapperStyles } from './MenuItemsWrapper.style';
+import { AllMenuItemsStyle } from './AllMenuItems.style';
 
-const MenuItemsWrapper = ({ styles, className, onClick }) => {
+const AllMenuItems = ({ styles, className, onClick }) => {
     const data = useStaticQuery(graphql`
         query QueryMenuItems {
             sanityMenuData {
@@ -16,7 +16,7 @@ const MenuItemsWrapper = ({ styles, className, onClick }) => {
     const menuData = data?.sanityMenuData?.menuItems;
     return (
         <>
-            <MenuItemsWrapperStyles styles={styles} className={className}>
+            <AllMenuItemsStyle styles={styles} className={className}>
                 {menuData.map((item, i) => (
                     <li key={i}>
                         <Link
@@ -30,9 +30,9 @@ const MenuItemsWrapper = ({ styles, className, onClick }) => {
                         </Link>
                     </li>
                 ))}
-            </MenuItemsWrapperStyles>
+            </AllMenuItemsStyle>
         </>
     );
 };
 
-export default MenuItemsWrapper;
+export default AllMenuItems;

@@ -1,7 +1,7 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
-import Logo2 from 'src/components/Logo2/Logo2';
+import Logo from 'src/components/Logo/Logo';
 import { SectionBlogPostHeroStyle } from './SectionBlogPostHero.style';
 
 const SectionBlogPostHero = ({ leftComponent, data }) => {
@@ -25,7 +25,7 @@ const SectionBlogPostHero = ({ leftComponent, data }) => {
                                     alt=""
                                 />
                             ) : (
-                                <Logo2 />
+                                <Logo />
                             )}
                         </div>
                     </BootsColumn>

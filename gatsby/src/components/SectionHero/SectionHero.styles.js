@@ -1,13 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const SectionHeroStyle = styled.header`
     display: flex;
+    width: 100%;
     align-items: center;
-    position: relative;
-    min-height: 100vh;
-    /* padding-top: 100px; */
-
-    p {
-        margin-top: 0;
-    }
+    min-height: 70vh;
 `;

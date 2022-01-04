@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MenuItemsWrapperStyles = styled.ul`
+export const AllMenuItemsStyle = styled.ul`
     display: none;
 
     ${({ theme }) => theme.media.mdAbove} {

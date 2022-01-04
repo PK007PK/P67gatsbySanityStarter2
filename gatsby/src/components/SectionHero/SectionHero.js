@@ -1,20 +1,22 @@
 import React from 'react';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
-import CooperatingCitiesCarousel from '../CooperatingCitiesCarousel/CooperatingCitiesCarousel';
 import { SectionHeroStyle } from './SectionHero.styles';
 
-const SectionHero = ({ leftComponent, homePage }) => {
+const SectionHero = ({ leftComponent, rightComponent }) => {
     const LeftComponent = leftComponent;
+    const RightComponent = rightComponent;
     return (
-        <BootsContainer style={{ position: 'relative' }}>
+        <BootsContainer>
             <SectionHeroStyle>
-                <BootsRow className="firstRow">
-                    <BootsColumn xs={9} sm={9} md={8}>
-                        <LeftComponent />
+                <BootsRow>
+                    <BootsColumn xs={12} sm={9} md={6}>
+                        {leftComponent && <LeftComponent />}
+                    </BootsColumn>
+                    <BootsColumn xs={12} sm={3} md={6}>
+                        {rightComponent && <RightComponent />}
                     </BootsColumn>
                 </BootsRow>
             </SectionHeroStyle>
-            {homePage && <CooperatingCitiesCarousel />}
         </BootsContainer>
     );
 };

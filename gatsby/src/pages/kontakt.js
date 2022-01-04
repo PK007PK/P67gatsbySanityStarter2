@@ -7,7 +7,6 @@ import { graphql } from 'gatsby';
 import FormContact from 'src/components/FormContact/FormContact';
 import BlockContent from '@sanity/block-content-to-react';
 import { ArticleStyling } from 'src/components/ArticleStyling/ArticleStyling';
-import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 
 const KontaktPage = ({ data }) => {
@@ -24,7 +23,6 @@ const KontaktPage = ({ data }) => {
     return (
         <Layout>
             <SEO title="Kontakt" />
-            <HeroBackImage data={gatsbyImageData} />
             <SectionHero
                 leftComponent={() => <HeroTextBlock title={title} heroTags={heroTags} description={description} />}
             />

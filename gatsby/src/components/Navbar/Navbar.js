@@ -7,9 +7,9 @@ import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsEleme
 import { Sling as Hamburger } from 'hamburger-react';
 import MenuDropDown from 'src/components/MenuDropDown/MenuDropDown';
 
-import Logo2 from 'src/components/Logo2/Logo2';
+import Logo from 'src/components/Logo/Logo';
 import Search from 'src/components/search';
-import MenuItemsWrapper from '../MenuItemsWrapper/MenuItemsWrapper';
+import AllMenuItems from '../AllMenuItems/AllMenuItems';
 import { NavbarStyle } from './Navbar.style';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
@@ -28,16 +28,18 @@ export default function Navbar({ location }) {
                                 className="logoWrapper"
                                 to="/"
                             >
-                                <Logo2 small />
+                                <Logo />
                             </Link>
 
                             <div className="desktopLinksWrapper">
-                                <MenuItemsWrapper onClick={diseableMenu} />
+                                <AllMenuItems onClick={diseableMenu} />
                                 <Search indices={searchIndices} />
                             </div>
+
                             <div className="burgerWrapper">
                                 <Hamburger toggled={isMenuActive} toggle={toogleIsMenuActive} />
                             </div>
+
                             {isMenuActive && <MenuDropDown />}
                         </div>
                     </BootsColumn>

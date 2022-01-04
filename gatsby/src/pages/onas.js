@@ -6,7 +6,6 @@ import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
 import BlockContent from '@sanity/block-content-to-react';
 import { ArticleStyling } from 'src/components/ArticleStyling/ArticleStyling';
-import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
 import SectionOurProjectsVertical from '../components/SectionOurProjectsVertical/SectionOurProjectsVertical';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
@@ -26,7 +25,6 @@ const ONasPage = ({ data }) => {
     return (
         <Layout>
             <SEO title="O nas" />
-            <HeroBackImage data={gatsbyImageData} />
             <SectionHero
                 leftComponent={() => <HeroTextBlock title={title} heroTags={heroTags} description={description} />}
             />

@@ -6,7 +6,6 @@ import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
 import FormContact from 'src/components/FormContact/FormContact';
 import BlockContent from '@sanity/block-content-to-react';
-import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 
 const PolitykaPage = ({ data }) => {
@@ -23,7 +22,6 @@ const PolitykaPage = ({ data }) => {
     return (
         <Layout>
             <SEO title="Kontakt" />
-            <HeroBackImage data={gatsbyImageData} />
             <SectionHero
                 leftComponent={() => <HeroTextBlock title={title} heroTags={heroTags} description={description} />}
             />

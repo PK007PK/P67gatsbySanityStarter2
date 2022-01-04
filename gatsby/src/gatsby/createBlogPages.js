@@ -22,7 +22,7 @@ export async function createBlogPages({ graphql, actions, reporter }) {
                         }
                     }
                 }
-                sanitySiteTechConfig {
+                sanityBlogConfig {
                     pagesInSet
                 }
             }
@@ -58,7 +58,7 @@ export async function createBlogPages({ graphql, actions, reporter }) {
     }
 
     // Create pagination
-    const pageSize = data.sanitySiteTechConfig.pagesInSet;
+    const pageSize = data.sanityBlogConfig.pagesInSet;
     const pageCount = Math.ceil(data.allSanityBlogPosts.totalCount / pageSize);
 
     // Loop from 1 to n and create the pages for them

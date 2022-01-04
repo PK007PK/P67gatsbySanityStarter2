@@ -4,15 +4,25 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import { FooterStyles } from './Footer.style';
 
 export default function Footer() {
+    const query = useStaticQuery(graphql`
+        {
+            sanitySiteSettings {
+                copyright
+            }
+        }
+    `);
+    const {
+        sanitySiteSettings: { copyright: copyRightName },
+    } = query;
     return (
         <FooterStyles>
             <BootsContainer between>
                 <BootsRow>
                     <BootsColumn sm={6}>
-                        <Link to="/polityka">Polityka prywatności</Link>
+                        <Link to="/polityka">Privacy Policy</Link>
                     </BootsColumn>
                     <BootsColumn className="copyright" sm={6}>
-                        &copy; Stowarzyszenie EkoMonterzy {new Date().getFullYear()}
+                        &copy; {copyRightName} {new Date().getFullYear()}
                     </BootsColumn>
                 </BootsRow>
             </BootsContainer>

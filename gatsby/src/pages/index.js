@@ -8,10 +8,8 @@ import Pagination from 'src/components/Pagination/Pagination';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import Search from 'src/components/search';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
-import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
-import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import Newsletter from '../components/Newsletter/Newsletter';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
@@ -40,7 +38,8 @@ const IndexPage = ({ data, pageContext, location }) => {
             postsToDisplay = allPosts;
     }
 
-    const { pagesInSet } = data.sanitySiteTechConfig;
+    const { pagesInSet } = data.sanityBlogConfig;
+    const { title: websiteTitle } = data.sanitySiteSettings;
     const {
         title,
         tags: heroTags,
@@ -53,17 +52,14 @@ const IndexPage = ({ data, pageContext, location }) => {
     return (
         <Layout>
             <SEO
-                title={`EkoMonterzy ${pageContext.selectionName ? `| ${pageContext.selectionName}` : ''} ${
+                title={`${websiteTitle} ${pageContext.selectionName ? `| ${pageContext.selectionName}` : ''} ${
                     pageContext.currentPage ? `| ${pageContext.currentPage}` : ''
                 }`}
             />
-            <HeroBackImage data={gatsbyImageData} />
             <SectionHero
-                homePage
                 leftComponent={() => <HeroTextBlock title={title} heroTags={heroTags} description={description} />}
             />
-            <SectionOurProjects />
-            <BootsContainer style={{ marginTop: '50px' }}>
+            <BootsContainer>
                 <BootsRow id="blog" between>
                     <BootsColumn md={8}>
                         <FilterCategory location={location} />
@@ -106,7 +102,10 @@ const IndexPage = ({ data, pageContext, location }) => {
 
 export const pageQuery = graphql`
     query pagesQuery($selectionName: String, $skip: Int = 0, $pageSize: Int) {
-        sanitySiteTechConfig {
+        sanitySiteSettings {
+            title
+        }
+        sanityBlogConfig {
             pagesInSet
         }
         sanityPageHome {

@@ -34,13 +34,13 @@ export async function turnTagsIntoPages({ graphql, actions }) {
                 {
                   totalCount
                 }
-                sanitySiteTechConfig {
+                sanityBlogConfig {
                     pagesInSet
                 }
               }
             `);
             const numberOfPosts = dataWithAllPostsInTag.data.allSanityBlogPosts.totalCount;
-            const numberOfPagesInSet = dataWithAllPostsInTag.data.sanitySiteTechConfig.pagesInSet;
+            const numberOfPagesInSet = dataWithAllPostsInTag.data.sanityBlogConfig.pagesInSet;
             return { numberOfPosts, numberOfPagesInSet };
         }
 
