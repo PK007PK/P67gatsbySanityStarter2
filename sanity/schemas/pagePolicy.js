@@ -2,7 +2,7 @@ import React from 'react';
 import { RiArticleLine } from 'react-icons/ri';
 
 export default {
-  name: 'pagePolityka',
+  name: 'pagePolicy',
   type: 'document',
   title: 'Strona "Polityka"',
   icon: () => <RiArticleLine />,

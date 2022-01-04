@@ -5,25 +5,16 @@ export default () =>
     .title('Base')
     .items([
       S.listItem()
-        .title('Konfiguracja strony')
+        .title('Website config')
         .child(
           S.document().schemaType('siteSettings').documentId('siteSettings')
         ),
       S.listItem()
-        .title('Ustawienia strony')
-        .child(
-          S.document().schemaType('siteTechConfig').documentId('siteTechConfig')
-        ),
+        .title('Blog config')
+        .child(S.document().schemaType('blogConfig').documentId('blogConfig')),
       S.listItem()
-        .title('Menu strony')
+        .title('Website main menu')
         .child(S.document().schemaType('menuData').documentId('menuData')),
-      S.listItem()
-        .title('Menu usług stowarzyszenia')
-        .child(
-          S.document()
-            .schemaType('allProjectsData')
-            .documentId('allProjectsData')
-        ),
       S.listItem()
         .title('Strona główna')
         .child(S.document().schemaType('pageHome').documentId('pageHome')),
@@ -36,21 +27,12 @@ export default () =>
           S.document().schemaType('pageKontakt').documentId('pageKontakt')
         ),
       S.listItem()
-        .title('Strona "Polityka"')
-        .child(
-          S.document().schemaType('pagePolityka').documentId('pagePolityka')
-        ),
+        .title('Site: "Privacy Policy"')
+        .child(S.document().schemaType('pagePolicy').documentId('pagePolicy')),
       S.listItem()
         .title('Referencje')
         .child(
           S.document().schemaType('testimonials').documentId('testimonials')
-        ),
-      S.listItem()
-        .title('Gminy')
-        .child(
-          S.document()
-            .schemaType('cooperatingCities')
-            .documentId('cooperatingCities')
         ),
       S.listItem()
         .title('Galeria')
@@ -59,11 +41,12 @@ export default () =>
         (item) =>
           ![
             'siteSettings',
-            'siteTechConfig',
+            'blogConfig',
             'allProjectsData',
             'pageHome',
             'pageBlog',
             'pageONas',
+            'pagePolicy',
             'pageKontakt',
             'gallery',
             'testimonials',

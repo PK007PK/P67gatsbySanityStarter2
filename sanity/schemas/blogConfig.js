@@ -2,7 +2,7 @@ import React from 'react';
 import { FiSettings } from 'react-icons/fi';
 
 export default {
-  name: 'siteTechConfig',
+  name: 'blogConfig',
   type: 'document',
   title: 'Site Config',
   icon: () => <FiSettings />,
@@ -21,7 +21,4 @@ export default {
       },
     },
   ],
-  initialValue: {
-    pagesInSet: 4,
-  },
 };

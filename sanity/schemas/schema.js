@@ -5,11 +5,11 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 // Then we give our schema to the builder and provide the result to Sanity
 
 import siteSettings from './siteSettings';
-import siteTechConfig from './siteTechConfig';
+import blogConfig from './blogConfig';
 import pageHome from './pageHome';
 import pageONas from './pageONas';
 import pageKontakt from './pageKontakt';
-import pagePolityka from './pagePolityka';
+import pagePolicy from './pagePolicy';
 import blogPosts from './blogPosts';
 import blogPostsCategories from './blogPostsCategories';
 import blogPostsComponents from './blogPostsComponents';
@@ -18,7 +18,6 @@ import projectItem from './projectItem';
 import allProjectsData from './allProjectsData';
 import galleryItem from './galleryItem';
 import gallery from './gallery';
-import cooperatingCities from './cooperatingCities';
 import testimonials from './testimonials';
 import testimonialItem from './testimonialItem';
 import menuData from './menuData';
@@ -31,14 +30,13 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     siteSettings,
-    siteTechConfig,
+    blogConfig,
     gallery,
-    cooperatingCities,
     galleryItem,
     pageHome,
     pageONas,
     pageKontakt,
-    pagePolityka,
+    pagePolicy,
     blogPosts,
     blogPostsCategories,
     blogPostsComponents,
