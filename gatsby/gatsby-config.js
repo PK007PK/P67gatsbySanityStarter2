@@ -6,7 +6,6 @@ export default {
     siteMetadata: {
         siteUrl: process.env.URL,
     },
-    flags: { DEV_SSR: true },
     plugins: [
         `gatsby-plugin-root-import`,
         // `gatsby-plugin-loadable-components-ssr`,

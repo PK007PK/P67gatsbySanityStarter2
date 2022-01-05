@@ -9,32 +9,18 @@ export const MenuDropDownStyles = styled.div`
     left: 0;
     right: 0;
     background-color: var(--colorWhite);
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
 
     .container {
-        min-height: 100vh;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 100%;
+
         ${({ theme }) => theme.media.smAbove} {
             margin-top: 50px;
-        }
-    }
-
-    .postsTitle {
-        display: none;
-        ${({ theme }) => theme.media.smAbove} {
-            display: block;
-            text-align: center;
-            margin-bottom: 0;
-            line-height: 100%;
-        }
-    }
-    .posts {
-        display: none;
-        ${({ theme }) => theme.media.smAbove} {
-            display: flex;
         }
     }
 
@@ -43,9 +29,28 @@ export const MenuDropDownStyles = styled.div`
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        flex-shrink: 0;
     }
 
-    ul {
+    .submenuTitle, .postsHeader {
+        font-size: 18px;
+
+        ${({ theme }) => theme.media.smAbove} {
+            text-align: center;
+            font-size: 22px;
+        }
+    }
+
+
+    .submenuBar {
+        margin-bottom: 20px;
+    }
+
+    .submenu {}
+
+    .submenuTitle {}
+
+    .submenuList {
         display: flex;
         flex-wrap: wrap;
         ${({ theme }) => theme.media.smAbove} {
@@ -56,14 +61,15 @@ export const MenuDropDownStyles = styled.div`
         margin-left: 0;
         min-width: 150px;
         flex-grow: 1;
-        font-size: 14px;
+        font-size: 140px;
 
         ${({ theme }) => theme.media.smAbove} {
             font-size: 16px;
         }
     }
 
-    li {
+    .submenuItem {
+        font-size: 14px;
         display: block;
         margin-bottom: 10px;
         margin-right: 20px;
@@ -74,13 +80,23 @@ export const MenuDropDownStyles = styled.div`
         }
     }
 
-    .title {
-        font-size: 18px;
-        text-align: left;
+    .latestArticlesTitleBar {}
+
+    .postsHeader {
+        display: none;
+        ${({ theme }) => theme.media.smAbove} {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 100%;
+        }
+    }
+
+    .postsBar {
+        display: none;
 
         ${({ theme }) => theme.media.smAbove} {
-            text-align: center;
-            font-size: var(--fontSizeBig1);
+            display: flex;
         }
     }
 

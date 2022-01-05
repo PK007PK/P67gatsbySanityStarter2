@@ -22,7 +22,7 @@ export const CardBlogEntry2Style = styled.div`
 
         ${({ theme }) => theme.media.smAbove} {
             width: ${({ small }) => (small ? '100%' : '300px')};
-            height: ${({ small }) => (small ? '200px' : '220px')};
+            height: ${({ small }) => (small ? '170px' : '220px')};
         }
 
         background-position: cover;
@@ -43,18 +43,7 @@ export const CardBlogEntry2Style = styled.div`
         ${({ small }) =>
             small &&
             css`
-                position: absolute;
-                bottom: -55px;
-                left: 5%;
-                width: 90%;
-                min-height: 150px;
-                background-color: rgba(255, 255, 255, 0.95);
-                border: 1px solid black;
-                border-radius: var(--borderRadius);
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
+                display: none;
             `}
     }
 

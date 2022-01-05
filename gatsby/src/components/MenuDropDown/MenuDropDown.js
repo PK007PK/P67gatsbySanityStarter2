@@ -65,11 +65,11 @@ const Menu = () => {
     }, [isMenuActive]);
 
     const Submenu = ({ data, name }) => (
-        <div>
-            <h2 className="title">{name}</h2>
-            <ul>
+        <div className="submenu">
+            <h2 className="submenuTitle">{name}</h2>
+            <ul className="submenuList">
                 {data.map((item, i) => (
-                    <li key={i}>
+                    <li key={i} className="submenuItem">
                         <Link
                             className="fx-txt-underline"
                             to={item.pageSlug || `/${item.slug.current}/1#blog`}
@@ -82,27 +82,28 @@ const Menu = () => {
             </ul>
         </div>
     );
+
     return (
         <MenuDropDownStyles ref={(el) => (menuWrapper = el)}>
             <BootsContainer className="container">
                 <nav>
-                    <BootsRow>
+                    <BootsRow className="submenuBar">
                         <BootsColumn sm={4}>
-                            <Submenu name="Strony" data={menuData} />
+                            <Submenu name="Sites" data={menuData} />
                         </BootsColumn>
                         <BootsColumn sm={4}>
-                            <Submenu name="Kategorie" data={categories} />
+                            <Submenu name="Categories" data={categories} />
                         </BootsColumn>
                         <BootsColumn sm={4}>
-                            <Submenu name="Tagi" data={tags} />
-                        </BootsColumn>
-                    </BootsRow>
-                    <BootsRow>
-                        <BootsColumn sm={4}>
-                            <h2 className="postsTitle">Najnowasze wpisy:</h2>
+                            <Submenu name="Tags" data={tags} />
                         </BootsColumn>
                     </BootsRow>
-                    <BootsRow className="posts">
+                    <BootsRow className="latestArticlesTitleBar">
+                        <BootsColumn sm={4}>
+                            <h2 className="postsHeader">Latest articles:</h2>
+                        </BootsColumn>
+                    </BootsRow>
+                    <BootsRow className="postsBar">
                         {posts.map((item, i) => (
                             <BootsColumn key={i} sm={4}>
                                 <Link onClick={diseableMenu} to={`/${item.slug.current}`}>
