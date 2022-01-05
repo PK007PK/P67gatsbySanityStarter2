@@ -22,7 +22,7 @@ export default function FilterCategory({ location }) {
     return (
         <FilterCategoryStyle>
             <Link to="/1#blog" style={pathCheck(location) ? { color: '#00BFA5' } : null}>
-                <h2 className="title">Aktualności</h2>
+                <h2 className="title">Latest articles</h2>
             </Link>
             <div className="links">
                 {categories.map((category) => (

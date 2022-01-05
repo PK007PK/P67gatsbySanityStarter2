@@ -75,7 +75,7 @@ const IndexPage = ({ data, pageContext, location }) => {
                         />
                     </BootsColumn>
                     <BootsColumn md={4}>
-                        <h3 style={{ marginTop: 'var(--spacingSmall)', textAlign: 'center' }}>Wyszukaj w serwisie</h3>
+                        <h3 style={{ marginTop: 'var(--spacingSmall)', textAlign: 'center' }}>Search site</h3>
                         <Search staticInput indices={searchIndices} />
                     </BootsColumn>
                 </BootsRow>
