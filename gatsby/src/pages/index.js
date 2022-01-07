@@ -92,7 +92,7 @@ const IndexPage = ({ data, pageContext, location }) => {
                         />
                     </BootsColumn>
                     <BootsColumn md={4}>
-                        <Newsletter />
+                        <Newsletter style={{ marginBottom: '50px' }} />
                     </BootsColumn>
                 </BootsRow>
             </BootsContainer>

@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useContext } from 'react';
 import { gsap } from 'gsap';
-
 import AppContext from 'src/AppProvider';
 
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import { useStaticQuery, graphql, Link } from 'gatsby';
+import { categoriesCheck } from '../../hooks/categoriesCheck';
 import { MenuDropDownStyles } from './MenuDropDown.styles';
 import CardBlogEntry2 from '../CardBlogEntry2/CardBlogEntry2';
+import Submenu from '../Submenu/Submenu';
 
 const Menu = () => {
     const { toogleIsMenuActive, isMenuActive, diseableMenu } = useContext(AppContext);
@@ -64,38 +65,24 @@ const Menu = () => {
         gsap.to(menuWrapper, { duration: 0.3, css: { display: 'block', top: 0 } });
     }, [isMenuActive]);
 
-    const Submenu = ({ data, name }) => (
-        <div className="submenu">
-            <h2 className="submenuTitle">{name}</h2>
-            <ul className="submenuList">
-                {data.map((item, i) => (
-                    <li key={i} className="submenuItem">
-                        <Link
-                            className="fx-txt-underline"
-                            to={item.pageSlug || `/${item.slug.current}/1#blog`}
-                            onClick={diseableMenu}
-                        >
-                            {item.pageName || item.name}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-
     return (
         <MenuDropDownStyles ref={(el) => (menuWrapper = el)}>
             <BootsContainer className="container">
                 <nav>
                     <BootsRow className="submenuBar">
                         <BootsColumn sm={4}>
-                            <Submenu name="Sites" data={menuData} />
+                            <Submenu onClick={diseableMenu} name="Sites" data={menuData} />
                         </BootsColumn>
                         <BootsColumn sm={4}>
-                            <Submenu name="Categories" data={categories} />
+                            <Submenu
+                                checkObject={categoriesCheck()}
+                                onClick={diseableMenu}
+                                name="Categories"
+                                data={categories}
+                            />
                         </BootsColumn>
                         <BootsColumn sm={4}>
-                            <Submenu name="Tags" data={tags} />
+                            <Submenu onClick={diseableMenu} name="Tags" data={tags} />
                         </BootsColumn>
                     </BootsRow>
                     <BootsRow className="latestArticlesTitleBar">

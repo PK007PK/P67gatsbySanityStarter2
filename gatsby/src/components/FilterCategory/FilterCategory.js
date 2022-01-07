@@ -1,9 +1,11 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
+import { categoriesCheck } from '../../hooks/categoriesCheck';
 import { FilterCategoryStyle } from './FilterCategory.style';
 import pathCheck from '../../utils/pathCheck';
 
 export default function FilterCategory({ location }) {
+    const counts = categoriesCheck();
     const data = useStaticQuery(graphql`
         {
             allSanityBlogPostsCategories(sort: { order: ASC, fields: position }) {
@@ -11,6 +13,13 @@ export default function FilterCategory({ location }) {
                     name
                     slug {
                         current
+                    }
+                }
+            }
+            allSanityBlogPosts {
+                nodes {
+                    categories {
+                        name
                     }
                 }
             }
@@ -25,15 +34,19 @@ export default function FilterCategory({ location }) {
                 <h2 className="title">Latest articles</h2>
             </Link>
             <div className="links">
-                {categories.map((category) => (
-                    <Link
-                        to={`/${category.slug.current}/1#blog`}
-                        style={pathCheck(location, category.slug.current) ? { color: '#00BFA5' } : null}
-                        key={category.slug.current}
-                    >
-                        {category.name}
-                    </Link>
-                ))}
+                {categories.map((category) => {
+                    if (counts[category.name] > 0) {
+                        return (
+                            <Link
+                                to={`/${category.slug.current}/1#blog`}
+                                style={pathCheck(location, category.slug.current) ? { color: '#00BFA5' } : null}
+                                key={category.slug.current}
+                            >
+                                {category.name} ({counts[category.name]})
+                            </Link>
+                        );
+                    }
+                })}
             </div>
         </FilterCategoryStyle>
     );

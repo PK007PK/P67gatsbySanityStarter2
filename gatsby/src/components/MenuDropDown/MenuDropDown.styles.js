@@ -32,7 +32,8 @@ export const MenuDropDownStyles = styled.div`
         flex-shrink: 0;
     }
 
-    .submenuTitle, .postsHeader {
+    .submenuTitle,
+    .postsHeader {
         font-size: 18px;
 
         ${({ theme }) => theme.media.smAbove} {
@@ -41,14 +42,15 @@ export const MenuDropDownStyles = styled.div`
         }
     }
 
-
     .submenuBar {
         margin-bottom: 20px;
     }
 
-    .submenu {}
+    .submenu {
+    }
 
-    .submenuTitle {}
+    .submenuTitle {
+    }
 
     .submenuList {
         display: flex;
@@ -80,7 +82,8 @@ export const MenuDropDownStyles = styled.div`
         }
     }
 
-    .latestArticlesTitleBar {}
+    .latestArticlesTitleBar {
+    }
 
     .postsHeader {
         display: none;
