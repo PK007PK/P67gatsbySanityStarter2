@@ -4,7 +4,8 @@ import AppContext from 'src/AppProvider';
 
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { categoriesCheck } from '../../hooks/categoriesCheck';
+import { categoriesUsed } from '../../hooks/categoriesUsed';
+import { tagsUsed } from '../../hooks/tagsUsed';
 import { MenuDropDownStyles } from './MenuDropDown.styles';
 import CardBlogEntry2 from '../CardBlogEntry2/CardBlogEntry2';
 import Submenu from '../Submenu/Submenu';
@@ -75,14 +76,14 @@ const Menu = () => {
                         </BootsColumn>
                         <BootsColumn sm={4}>
                             <Submenu
-                                checkObject={categoriesCheck()}
+                                checkObject={categoriesUsed()}
                                 onClick={diseableMenu}
                                 name="Categories"
                                 data={categories}
                             />
                         </BootsColumn>
                         <BootsColumn sm={4}>
-                            <Submenu onClick={diseableMenu} name="Tags" data={tags} />
+                            <Submenu checkObject={tagsUsed()} onClick={diseableMenu} name="Tags" data={tags} />
                         </BootsColumn>
                     </BootsRow>
                     <BootsRow className="latestArticlesTitleBar">

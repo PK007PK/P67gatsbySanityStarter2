@@ -1,11 +1,11 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { categoriesCheck } from '../../hooks/categoriesCheck';
+import { categoriesUsed } from '../../hooks/categoriesUsed';
 import { FilterCategoryStyle } from './FilterCategory.style';
 import pathCheck from '../../utils/pathCheck';
 
 export default function FilterCategory({ location }) {
-    const counts = categoriesCheck();
+    const counts = categoriesUsed();
     const data = useStaticQuery(graphql`
         {
             allSanityBlogPostsCategories(sort: { order: ASC, fields: position }) {

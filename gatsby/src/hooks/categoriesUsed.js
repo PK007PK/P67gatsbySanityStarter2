@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-export function categoriesCheck() {
+export function categoriesUsed() {
     const data = useStaticQuery(graphql`
         {
             allSanityBlogPosts {
@@ -14,13 +14,12 @@ export function categoriesCheck() {
     `);
 
     const allPostsCategories = [];
-    const allPosts = data.allSanityBlogPosts.nodes;
-    allPosts.forEach((post) => {
+    data.allSanityBlogPosts.nodes.forEach((post) => {
         post.categories.forEach((item) => allPostsCategories.push(item.name));
     });
-    const counts = {};
+    const categoriesCounts = {};
     allPostsCategories.forEach((x) => {
-        counts[x] = (counts[x] || 0) + 1;
+        categoriesCounts[x] = (categoriesCounts[x] || 0) + 1;
     });
-    return counts;
+    return categoriesCounts;
 }
