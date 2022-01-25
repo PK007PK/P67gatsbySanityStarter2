@@ -7,7 +7,7 @@ import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsEleme
 import { Sling as Hamburger } from 'hamburger-react';
 import MenuDropDown from 'src/components/MenuDropDown/MenuDropDown';
 
-import Logo from 'src/components/Logo/Logo';
+import Logo from 'src/components/atoms/Logo/Logo';
 import Search from 'src/components/search';
 import AllMenuItems from '../AllMenuItems/AllMenuItems';
 import { NavbarStyle } from './Navbar.style';

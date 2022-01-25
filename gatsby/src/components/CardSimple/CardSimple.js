@@ -1,11 +1,8 @@
-import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { CardSimpleStyles } from './CardSimple.styles.js';
 
 const CardSimple = ({ data, className }) => {
     const { projectName: title, projectImage, color, backgroundColor } = data;
-    const imgSource = projectImage?.asset?.gatsbyImageData;
     return (
         <CardSimpleStyles color={color} backgroundColor={backgroundColor} className={className}>
             <div className="textBlock">

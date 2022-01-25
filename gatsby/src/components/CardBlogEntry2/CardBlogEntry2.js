@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Logo from 'src/components/Logo/Logo';
+import Logo from 'src/components/atoms/Logo/Logo';
 import { CardBlogEntry2Style } from './CardBlogEntry2.style';
 
 gsap.registerPlugin(ScrollTrigger);

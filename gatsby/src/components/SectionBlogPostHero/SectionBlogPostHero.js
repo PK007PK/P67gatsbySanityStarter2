@@ -1,7 +1,7 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
-import Logo from 'src/components/Logo/Logo';
+import Logo from 'src/components/atoms/Logo/Logo';
 import { SectionBlogPostHeroStyle } from './SectionBlogPostHero.style';
 
 const SectionBlogPostHero = ({ leftComponent, data }) => {

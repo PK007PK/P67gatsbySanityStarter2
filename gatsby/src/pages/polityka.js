@@ -17,7 +17,7 @@ const PolitykaPage = ({ data }) => {
             asset: { gatsbyImageData },
         },
         _rawRichText,
-    } = data.sanityPagePolityka;
+    } = data.sanityPagePolicy;
 
     return (
         <Layout>
@@ -46,7 +46,7 @@ const PolitykaPage = ({ data }) => {
 
 export const pageQuery = graphql`
     query {
-        sanityPagePolityka {
+        sanityPagePolicy {
             title
             tags
             description

@@ -1,5 +1,5 @@
 import React from 'react';
-import logoSign from '../../assets/images/LogoSignVector.svg';
+import logoSign from 'src/assets/images/LogoSignVector.svg';
 import { StyledLogo } from './Logo.style';
 
 const Logo = () => (
