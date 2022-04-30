@@ -2,15 +2,19 @@ import React from 'react';
 import { FiSettings } from 'react-icons/fi';
 
 export default {
-  name: 'siteSettings',
+  name: 'websiteSettings',
   type: 'document',
-  title: 'Site Settings',
+  title: 'Website settings',
   icon: () => <FiSettings />,
+  initialValue: () => ({
+    title: 'Sanity Website title',
+  }),
   fields: [
     {
       name: 'title',
       type: 'string',
       title: 'Title',
+      initialValue: 'Title',
     },
     {
       title: 'Website logo',
@@ -52,6 +56,7 @@ export default {
       name: 'copyright',
       type: 'string',
       title: "Copyright's name",
+      initialValue: 'Sanity copy',
     },
     {
       name: 'keywords',
@@ -64,4 +69,8 @@ export default {
       },
     },
   ],
+  initialValue: {
+    copyright: 'Def copyright',
+    title: 'Def title',
+  },
 };

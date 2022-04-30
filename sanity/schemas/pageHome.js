@@ -6,6 +6,11 @@ export default {
   type: 'document',
   title: 'Home page data',
   icon: () => <RiArticleLine />,
+  initialValue: () => ({
+    title: 'Sanity Home title',
+    tags: '',
+    description: 'Sanity Home description',
+  }),
   fields: [
     {
       name: 'title',

@@ -2,7 +2,7 @@ import React from 'react';
 import { RiArticleLine } from 'react-icons/ri';
 
 export default {
-  name: 'pageONas',
+  name: 'pageAbout',
   type: 'document',
   title: 'Strona "O nas"',
   icon: () => <RiArticleLine />,
@@ -11,11 +11,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-    },
-    {
-      name: 'tags',
-      title: 'Tagi',
-      type: 'string',
+      initialValue: 'Default About page title',
     },
     {
       name: 'image',
@@ -32,10 +28,20 @@ export default {
       rows: 2,
     },
     {
-      title: 'Rich text',
       name: 'richText',
+      title: 'Main content',
       type: 'array',
       of: [{ type: 'block' }, { type: 'image' }],
     },
   ],
+  initialValue: {
+    title: 'Default About page title',
+    description: 'Default description text',
+    richText: 'Default main content text',
+    image: {
+      asset: {
+        gatsbyImageData: './placeholder.png',
+      },
+    },
+  },
 };

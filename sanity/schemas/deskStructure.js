@@ -5,9 +5,11 @@ export default () =>
     .title('Base')
     .items([
       S.listItem()
-        .title('Website config')
+        .title('Website settings')
         .child(
-          S.document().schemaType('siteSettings').documentId('siteSettings')
+          S.document()
+            .schemaType('websiteSettings')
+            .documentId('websiteSettings')
         ),
       S.listItem()
         .title('Blog config')
@@ -19,8 +21,8 @@ export default () =>
         .title('Strona główna')
         .child(S.document().schemaType('pageHome').documentId('pageHome')),
       S.listItem()
-        .title('Strona "O nas"')
-        .child(S.document().schemaType('pageONas').documentId('pageONas')),
+        .title('Page "About"')
+        .child(S.document().schemaType('pageAbout').documentId('pageAbout')),
       S.listItem()
         .title('Strona "Kontakt"')
         .child(
@@ -40,12 +42,12 @@ export default () =>
       ...S.documentTypeListItems().filter(
         (item) =>
           ![
-            'siteSettings',
+            'websiteSettings',
             'blogConfig',
             'allProjectsData',
             'pageHome',
             'pageBlog',
-            'pageONas',
+            'pageAbout',
             'pagePolicy',
             'pageKontakt',
             'gallery',

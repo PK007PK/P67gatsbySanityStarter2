@@ -4,8 +4,11 @@ import { FiSettings } from 'react-icons/fi';
 export default {
   name: 'blogConfig',
   type: 'document',
-  title: 'Site Config',
+  title: 'Blog config',
   icon: () => <FiSettings />,
+  initialValue: () => ({
+    pagesInSet: 2,
+  }),
   fields: [
     {
       name: 'pagesInSet',
