@@ -6,13 +6,13 @@ import { FooterStyles } from './Footer.style';
 export default function Footer() {
     const query = useStaticQuery(graphql`
         {
-            sanitySiteSettings {
+            sanityWebsiteSettings {
                 copyright
             }
         }
     `);
     const {
-        sanitySiteSettings: { copyright: copyRightName },
+        sanityWebsiteSettings: { copyright: copyRightName },
     } = query;
     return (
         <FooterStyles>

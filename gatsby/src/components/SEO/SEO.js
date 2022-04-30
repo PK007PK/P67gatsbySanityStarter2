@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 const SEO = ({ children, location, title }) => {
     const data = useStaticQuery(graphql`
         {
-            sanitySiteSettings {
+            sanityWebsiteSettings {
                 title
                 description
                 lang

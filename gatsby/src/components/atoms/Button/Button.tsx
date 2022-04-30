@@ -1,17 +1,23 @@
 import styled from 'styled-components';
+import { StylingProps } from 'types/stylingProps';
 
-export const ButtonStyle = styled.button`
+interface Props extends StylingProps{
+    full: string;
+    secondary: boolean;
+}
+
+export const ButtonStyle = styled.button<Props>`
     background-color: ${({ secondary }) => (secondary ? 'var(--colorActiveSecondary)' : 'var(--colorActivePrimary)')};
-    color: ${({ color }) => color || 'white'};
-    padding: ${({ padding }) => padding || ' var(--spacingSmall) var(--spacingMedium)'};
-    border: none;
+    color: ${({ color }: StylingProps) => color || 'white'};
+    padding: ${({ padding }: StylingProps) => padding || ' var(--spacingSmall) var(--spacingMedium)'};
     text-shadow: var(--txtShadow);
     font-size: var(--fontSizeLead);
+    transition: var(--transitionBasic);
+    border: none;
     height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transitionBasic);
 
     ${({ full }) =>
         full &&

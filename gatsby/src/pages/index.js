@@ -8,6 +8,7 @@ import Pagination from 'src/components/Pagination/Pagination';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import Search from 'src/components/search';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { ButtonStyle } from 'src/components/atoms/Button/Button.tsx';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 import Newsletter from '../components/Newsletter/Newsletter';
@@ -24,6 +25,7 @@ const IndexPage = ({ data, pageContext, location }) => {
     const { allPosts } = data;
 
     let postsToDisplay;
+
     switch (pageContext.pageType) {
         case 'allPaginatedPosts':
             postsToDisplay = allPosts;
@@ -39,7 +41,9 @@ const IndexPage = ({ data, pageContext, location }) => {
     }
 
     const { pagesInSet } = data.sanityBlogConfig;
-    const { title: websiteTitle } = data.sanitySiteSettings;
+
+    const { title: websiteTitle = 'Component title' } = data.sanityWebsiteSettings;
+
     const {
         title,
         tags: heroTags,
@@ -93,6 +97,7 @@ const IndexPage = ({ data, pageContext, location }) => {
                     </BootsColumn>
                     <BootsColumn md={4}>
                         <Newsletter style={{ marginBottom: '50px' }} />
+                        <ButtonStyle>Button</ButtonStyle>
                     </BootsColumn>
                 </BootsRow>
             </BootsContainer>
@@ -102,7 +107,7 @@ const IndexPage = ({ data, pageContext, location }) => {
 
 export const pageQuery = graphql`
     query pagesQuery($selectionName: String, $skip: Int = 0, $pageSize: Int) {
-        sanitySiteSettings {
+        sanityWebsiteSettings {
             title
         }
         sanityBlogConfig {

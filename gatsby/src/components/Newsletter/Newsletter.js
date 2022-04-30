@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GiLetterBomb } from '@react-icons/all-files/gi/GiLetterBomb';
-import { ButtonStyle } from 'src/components/Button/Button';
+import { ButtonStyle } from 'src/components/atoms/Button/Button';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import { Link } from 'gatsby';
 import { NewsletterStyle, CustomFormStyle, OpeningButton } from './NewsletterStyle';
