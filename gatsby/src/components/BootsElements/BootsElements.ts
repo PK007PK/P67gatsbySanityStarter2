@@ -1,6 +1,17 @@
 import styled from 'styled-components';
+import { ThemeEntity } from 'styles/Theme';
 
-export const BootsContainer = styled.div`
+interface BootsElementsEntity {
+  noXl?: boolean,
+  xxs?: number,
+  xs?: number,
+  sm?: number, 
+  md?: number, 
+  lg?: number,
+  xl?: number,
+}
+
+export const BootsContainer = styled.div<BootsElementsEntity>`
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
