@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import { HeroBreakingNewsStyle } from './HeroBreakingNews.style';
 
 const HeroBreakingNews = () => {

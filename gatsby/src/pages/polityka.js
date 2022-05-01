@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from 'src/components/Layout/Layout';
 import SEO from 'src/components/atoms/SEO/SEO';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
 import FormContact from 'src/components/FormContact/FormContact';

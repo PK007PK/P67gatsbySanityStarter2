@@ -1,5 +1,5 @@
 import React from 'react';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import { SectionHeroStyle } from './SectionHero.styles';
 
 const SectionHero = ({ leftComponent, rightComponent }) => {

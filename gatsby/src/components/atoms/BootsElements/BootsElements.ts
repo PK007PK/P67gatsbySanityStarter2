@@ -9,6 +9,7 @@ interface BootsElementsEntity {
   md?: number, 
   lg?: number,
   xl?: number,
+  between: boolean,
 }
 
 export const BootsContainer = styled.div<BootsElementsEntity>`
@@ -48,7 +49,7 @@ export const BootsContainer = styled.div<BootsElementsEntity>`
   }
 `;
 
-export const BootsRow = styled.div`
+export const BootsRow = styled.div<BootsElementsEntity>`
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -57,7 +58,7 @@ export const BootsRow = styled.div`
     justify-content: ${({ between }) => (between ? 'space-between' : 'flex-start')};
 `;
 
-export const BootsColumn = styled.div`
+export const BootsColumn = styled.div<BootsElementsEntity>`
     width: 100%;
     padding: 0 15px;
     position: relative;

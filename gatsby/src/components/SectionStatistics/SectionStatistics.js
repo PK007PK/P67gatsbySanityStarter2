@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { BootsContainer } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer } from 'src/components/atoms/BootsElements/BootsElements.ts';
 
 import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import { SectionStatisticsStyle } from './SectionStatistics.style';
 import GalleryCarousel from '../GalleryCarousel/GalleryCarousel';
 import Statistics from '../Statistics/Statistics';

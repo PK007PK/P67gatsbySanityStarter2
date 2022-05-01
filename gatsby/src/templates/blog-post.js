@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import SectionBlogPostHero from 'src/components/SectionBlogPostHero/SectionBlogPostHero';
 import BlockContent from '@sanity/block-content-to-react';
 import Layout from 'src/components/Layout/Layout';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import SEO from '../components/SEO/SEO';
 import OptionalBlogPostComponents from '../components/OptionalBlogPostComponents/OptionalBlogPostComponents';
 import { ArticleStyling } from '../components/ArticleStyling/ArticleStyling';

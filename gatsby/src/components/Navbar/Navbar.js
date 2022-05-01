@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import AppContext from 'src/AppProvider';
 
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import { Sling as Hamburger } from 'hamburger-react';
 import MenuDropDown from 'src/components/MenuDropDown/MenuDropDown';
 

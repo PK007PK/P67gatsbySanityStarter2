@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext } from 'react';
 import { gsap } from 'gsap';
 import AppContext from 'src/AppProvider';
 
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { categoriesUsed } from '../../hooks/categoriesUsed';
 import { tagsUsed } from '../../hooks/tagsUsed';

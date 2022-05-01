@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { BootsContainer } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import Slider from 'react-slick';
 import ARROW_left from 'src/assets/images/arrLeft.svg';
 import ARROW_right from 'src/assets/images/arrRight.svg';

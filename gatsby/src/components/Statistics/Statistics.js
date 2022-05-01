@@ -1,7 +1,7 @@
 import { MdLocationCity } from '@react-icons/all-files/md/MdLocationCity';
 import { BsFillPeopleFill } from '@react-icons/all-files/bs/BsFillPeopleFill';
 import { GrDocumentStore } from '@react-icons/all-files/gr/GrDocumentStore';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import React from 'react';
 import { StatisticsStyle } from './Statistics.style';
 

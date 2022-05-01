@@ -1,5 +1,5 @@
 import React from 'react';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { FooterStyles } from './Footer.style';
 
