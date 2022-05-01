@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from 'src/components/Layout/Layout';
-import SEO from 'src/components/SEO/SEO';
+import SEO from 'src/components/atoms/SEO/SEO';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';

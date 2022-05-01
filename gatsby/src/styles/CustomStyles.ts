@@ -4,7 +4,6 @@ const CustomStyles = createGlobalStyle`
 
 
 .slick-slide {
-  /* padding-right: 5px; */
   padding: 0 2px;
 }
 
