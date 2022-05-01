@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from 'src/components/Layout/Layout';
-import SEO from 'src/components/atoms/SEO/SEO';
+import Layout from 'src/components/organisms/Layout/Layout';
+import SEO from 'src/components/atoms/SEO/SEO.tsx';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
@@ -10,7 +10,6 @@ import { ArticleStyling } from 'src/components/ArticleStyling/ArticleStyling';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 
 const About = ({ data }) => {
-    console.log(data);
     const {
         title,
         description,

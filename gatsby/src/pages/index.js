@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from 'src/components/Layout/Layout';
-import SEO from 'src/components/atoms/SEO/SEO';
+import Layout from 'src/components/organisms/Layout/Layout';
+import SEO from 'src/components/atoms/SEO/SEO.tsx';
 import FilterCategory from 'src/components/FilterCategory/FilterCategory';
 import FilterTags from 'src/components/FilterTags/FilterTags';
 import Pagination from 'src/components/Pagination/Pagination';
