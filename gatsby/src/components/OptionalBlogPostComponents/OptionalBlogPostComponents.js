@@ -1,6 +1,7 @@
 import React from 'react';
 import Newsletter from 'src/components/Newsletter/Newsletter';
-import CardSimple from '../CardSimple/CardSimple';
+
+import { CardSimple } from 'components/atoms/CardSimple/CardSimple';
 import SocialShare from '../SocialShare/SocialShare';
 import CardContactForm from '../CardContactForm/CardContactForm';
 import { OptionalBlogPostComponentsStyle } from './OptionalBlogPostComponents.style';

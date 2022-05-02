@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
-export const CardSimpleStyles = styled.div`
+interface Props {
+    color?: string,
+    backgroundColor?: string,
+    className?: string,
+}
+
+export const CardSimpleStyles = styled.div<Props>`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
