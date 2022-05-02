@@ -1,21 +1,22 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 
-import AppContext from 'src/AppProvider';
-
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import { Sling as Hamburger } from 'hamburger-react';
-import MenuDropDown from 'src/components/MenuDropDown/MenuDropDown';
 
-import Logo from 'src/components/atoms/Logo/Logo';
-import Search from 'src/components/search';
-import AllMenuItems from '../AllMenuItems/AllMenuItems';
+import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
+import { MenuDropDown } from 'components/MenuDropDown/MenuDropDown';
+import { Logo } from 'components/atoms/Logo/Logo';
+import { Search } from 'components/search';
+import { AppContext } from 'AppProvider';
+import { MenuItemsList } from 'components/molecules/MenuItemsList/MenuItemsList';
+
 import { NavbarStyle } from './Navbar.style';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
-export default function Navbar({ location }) {
+export default function Navbar() {
     const { toogleIsMenuActive, isMenuActive, diseableMenu } = useContext(AppContext);
+
     return (
         <NavbarStyle isMenuActive={isMenuActive}>
             <BootsContainer>
@@ -32,7 +33,7 @@ export default function Navbar({ location }) {
                             </Link>
 
                             <div className="desktopLinksWrapper">
-                                <AllMenuItems onClick={diseableMenu} />
+                                <MenuItemsList onClick={diseableMenu} />
                                 <Search indices={searchIndices} />
                             </div>
 

@@ -9,7 +9,7 @@ interface QueryStructure {
     }
 }
 
-const Logo = () => {
+export const Logo = () => {
 
     const {  sanityWebsiteSettings: {copyright = "Abc"} }: QueryStructure = useStaticQuery(graphql`
         {
@@ -29,4 +29,3 @@ const Logo = () => {
     )
 };
 
-export default Logo;

@@ -1,5 +1,6 @@
+import React, { createRef, useState, useMemo } from 'react';
 import algoliasearch from 'algoliasearch/lite';
-import { createRef, default as React, useState, useMemo } from 'react';
+
 import { InstantSearch } from 'react-instantsearch-dom';
 import { ThemeProvider } from 'styled-components';
 import StyledSearchBox from './styled-search-box';
@@ -13,7 +14,7 @@ const theme = {
     faded: '#888',
 };
 
-export default function Search({ indices, staticInput }) {
+export function Search({ indices, staticInput }) {
     const rootRef = createRef();
     const [query, setQuery] = useState();
     const [hasFocus, setFocus] = useState(false);

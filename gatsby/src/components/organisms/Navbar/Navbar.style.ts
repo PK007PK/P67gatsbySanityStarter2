@@ -1,6 +1,11 @@
 import styled from 'styled-components';
+import { ThemeEntity } from 'styles/Theme';
 
-export const NavbarStyle = styled.nav`
+interface Props {
+    isMenuActive?: boolean;
+}
+
+export const NavbarStyle = styled.nav<Props>`
     z-index: 10;
     top: 0;
     left: 0;
@@ -23,7 +28,7 @@ export const NavbarStyle = styled.nav`
 
     .menuList {
         display: none;
-        ${({ theme }) => theme.media.mdAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.mdAbove} {
             align-items: center;
             display: flex;
             margin-left: auto;
@@ -39,7 +44,7 @@ export const NavbarStyle = styled.nav`
     .desktopLinksWrapper {
         display: none;
         margin-left: auto;
-        ${({ theme }) => theme.media.mdAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.mdAbove} {
             display: flex;
             align-items: center;
         }

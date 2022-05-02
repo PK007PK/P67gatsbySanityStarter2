@@ -9,7 +9,7 @@ interface BootsElementsEntity {
   md?: number, 
   lg?: number,
   xl?: number,
-  between: boolean,
+  between?: boolean,
 }
 
 export const BootsContainer = styled.div<BootsElementsEntity>`

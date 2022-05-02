@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useContext } from 'react';
 import { gsap } from 'gsap';
-import AppContext from 'src/AppProvider';
+import { AppContext } from 'src/AppProvider';
 
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import { useStaticQuery, graphql, Link } from 'gatsby';
@@ -10,7 +10,7 @@ import { MenuDropDownStyles } from './MenuDropDown.styles';
 import CardBlogEntry2 from '../CardBlogEntry2/CardBlogEntry2';
 import Submenu from '../Submenu/Submenu';
 
-const Menu = () => {
+export const MenuDropDown = () => {
     const { toogleIsMenuActive, isMenuActive, diseableMenu } = useContext(AppContext);
     const data = useStaticQuery(graphql`
         query QueryMenuItems2 {
@@ -108,5 +108,3 @@ const Menu = () => {
         </MenuDropDownStyles>
     );
 };
-
-export default Menu;

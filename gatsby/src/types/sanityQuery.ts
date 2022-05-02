@@ -20,5 +20,8 @@ export interface SanityQuery {
             },
         }
         keywords?: string,
+    },
+    sanityMenuData: {
+        menuItems: { pageSlug: string, pageName: string }[]
     }
 }
