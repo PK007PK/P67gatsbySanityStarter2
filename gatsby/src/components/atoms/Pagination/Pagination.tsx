@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'gatsby';
 import { PaginationStyle } from './Pagination.style';
 import { CommonProps } from 'types/commonProps';
@@ -10,7 +10,7 @@ interface Props extends CommonProps {
     base: string,
 }
 
-export function Pagination(props: Props) {
+export const Pagination: FC = (props: Props) => {
 
     const { pageSize, totalCount, currentPage, base, className, style } = props;
     
