@@ -10,6 +10,7 @@ import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/Boot
 import { ButtonStyle } from 'src/components/atoms/Button/Button.tsx';
 
 import { Layout } from 'components/organisms/Layout/Layout';
+import CardContactForm from 'components/CardContactForm/CardContactForm';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 import Newsletter from '../components/Newsletter/Newsletter';
@@ -98,7 +99,7 @@ const IndexPage = ({ data, pageContext, location }) => {
                     </BootsColumn>
                     <BootsColumn md={4}>
                         <Newsletter style={{ marginBottom: '50px' }} />
-                        <ButtonStyle>Button</ButtonStyle>
+                        <CardContactForm />
                     </BootsColumn>
                 </BootsRow>
             </BootsContainer>

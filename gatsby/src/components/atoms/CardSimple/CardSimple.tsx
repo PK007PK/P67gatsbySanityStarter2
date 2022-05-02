@@ -6,7 +6,7 @@ interface Props extends CommonProps {
     data: {
         color?: string,
         backgroundColor?: string,
-        projectName: string,
+        projectName?: string,
     }
 }
 

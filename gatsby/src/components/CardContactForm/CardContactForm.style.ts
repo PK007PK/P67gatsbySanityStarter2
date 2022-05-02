@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ThemeEntity } from 'styles/Theme';
 
 export const CardContactFormStyle = styled.div`
     position: relative;
@@ -17,23 +18,13 @@ export const CardContactFormStyle = styled.div`
         transition: var(--transitionBasic);
 
         &:hover {
-            box-shadow: ${({ theme }) => theme.elevation.dp4};
+            box-shadow: ${({ theme }: {theme: ThemeEntity}) => theme.elevation.dp4};
         }
 
         .innerWrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
-            font-size: var(--fontSizeLead);
-
-            p {
-                /* color: black; */
-                /* font-weight: 600; */
-            }
-            p:first-child {
-                margin-top: 0;
-            }
         }
 
         .icon {
@@ -50,7 +41,7 @@ export const CardContactFormStyle = styled.div`
         background-color: rgba(0, 96, 100, 0.3);
 
         border-radius: var(--borderRadius);
-        box-shadow: ${({ theme }) => theme.elevation.dp4};
+        box-shadow: ${({ theme }: {theme: ThemeEntity}) => theme.elevation.dp4};
     }
 
     .title {

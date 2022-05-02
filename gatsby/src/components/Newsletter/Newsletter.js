@@ -3,6 +3,7 @@ import { GiLetterBomb } from '@react-icons/all-files/gi/GiLetterBomb';
 import { ButtonStyle } from 'src/components/atoms/Button/Button';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import { Link } from 'gatsby';
+import { CardButton } from 'components/atoms/CardButton/CardButton';
 import { NewsletterStyle, CustomFormStyle, OpeningButton } from './NewsletterStyle';
 
 const CustomForm = ({ status, message, onValidated }) => {
@@ -51,12 +52,12 @@ const Newsletter = ({ className, style }) => {
     return (
         <div style={style} className={className}>
             {!open && (
-                <OpeningButton secondary full className="openBtn" type="button" onClick={() => setOpen(!open)}>
-                    <div className="innerWrapper">
-                        <GiLetterBomb className="icon" />
-                        Newsletter
-                    </div>
-                </OpeningButton>
+                <CardButton
+                    title="Newsletter"
+                    iconComponent={() => <GiLetterBomb className="icon" />}
+                    type="button"
+                    onClick={() => setOpen(!open)}
+                />
             )}
             {open && (
                 <CustomFormStyle>

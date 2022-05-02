@@ -9,11 +9,9 @@ const CardContactForm = ({ className, style }) => {
         <CardContactFormStyle style={style} className={className}>
             {!open && (
                 <button className="openingButton" type="button" onClick={() => setOpen(!open)}>
-                    <IoIosContact className="icon" />
                     <div className="innerWrapper">
-                        <p>Potrzebujesz pomocy w realizacji inwestycji proekologicznej?</p>
-                        <span>#porady #dotacje #oferty partnerów</span>
-                        <p>Wypełnij formularz, pomożemy!</p>
+                        <IoIosContact className="icon" />
+                        Contact form
                     </div>
                 </button>
             )}
