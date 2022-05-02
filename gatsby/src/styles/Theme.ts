@@ -25,8 +25,37 @@ export interface ThemeEntity {
       lg: number,
       xl: number,
     },
-    elevation: object,
-    elevationSpecial: object,
+    elevation: {
+      dp1: string, 
+      dp2: string,
+      dp3: string,
+      dp4: string,
+      dp5: string,
+      dp6: string,
+      dp7: string,
+      dp8: string,
+      dp9: string,
+      dp10: string,
+      dp11: string,
+      dp12: string,
+      dp13: string,
+      dp14: string,
+      dp15: string,
+      dp16: string,
+      dp17: string,
+      dp18: string,
+      dp19: string,
+      dp20: string,
+      dp21: string,
+      dp22: string,
+      dp23: string,
+      dp24: string,
+    },
+    elevationSpecial: {
+      dp1: string;
+      dp4: string;
+      dp8: string;
+    }
   }
   
   export const theme = {} as ThemeEntity;

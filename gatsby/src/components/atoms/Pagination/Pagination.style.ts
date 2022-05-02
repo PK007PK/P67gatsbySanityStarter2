@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ThemeEntity } from 'styles/Theme';
 
 export const PaginationStyle = styled.div`
     margin-top: var(--spacingRegular);
@@ -20,7 +21,7 @@ export const PaginationStyle = styled.div`
         &:hover,
         &[aria-current],
         &.current {
-            box-shadow: ${({ theme }) => theme.elevation.dp8};
+            box-shadow: ${({ theme }: {theme: ThemeEntity}) => theme.elevation.dp8};
             background-color: var(--colorDarkGray);
             color: var(--colorWhite);
             border: none;

@@ -3,12 +3,13 @@ import { graphql } from 'gatsby';
 import SEO from 'src/components/atoms/SEO/SEO.tsx';
 import FilterCategory from 'src/components/FilterCategory/FilterCategory';
 import FilterTags from 'src/components/FilterTags/FilterTags';
-import Pagination from 'src/components/Pagination/Pagination';
+import { Pagination } from 'src/components/atoms/Pagination/Pagination';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import { Search } from 'src/components/search';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import { ButtonStyle } from 'src/components/atoms/Button/Button.tsx';
-import Layout from 'components/organisms/Layout/Layout';
+
+import { Layout } from 'components/organisms/Layout/Layout';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 import Newsletter from '../components/Newsletter/Newsletter';

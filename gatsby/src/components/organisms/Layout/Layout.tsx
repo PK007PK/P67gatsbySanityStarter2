@@ -7,7 +7,7 @@ import GlobalStyles from 'styles/GlobalStyles';
 import Typography from 'styles/Typography';
 
 
-const Layout = ({ children }) => (
+export const Layout = ({ children }) => (
     <>
         <GlobalStyles />
         <Typography />
@@ -18,4 +18,3 @@ const Layout = ({ children }) => (
     </>
 );
 
-export default Layout;

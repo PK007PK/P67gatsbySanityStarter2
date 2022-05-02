@@ -1,8 +1,19 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { PaginationStyle } from './Pagination.style';
+import { CommonProps } from 'types/commonProps';
 
-export default function Pagination({ pageSize, totalCount, currentPage, base, className, style }) {
+interface Props extends CommonProps {
+    pageSize: number,
+    totalCount: number, 
+    currentPage: number, 
+    base: string,
+}
+
+export function Pagination(props: Props) {
+
+    const { pageSize, totalCount, currentPage, base, className, style } = props;
+    
     const totalPages = Math.ceil(totalCount / pageSize);
 
     return (
