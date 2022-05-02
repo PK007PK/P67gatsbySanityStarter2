@@ -1,4 +1,5 @@
-import Footer from 'components/Footer/Footer';
+
+import { Footer } from 'components/atoms/Footer/Footer';
 import Navbar from 'components/organisms/Navbar/Navbar';
 import React from 'react';
 import CustomStyles from 'styles/CustomStyles';

@@ -1,14 +1,15 @@
 import styled from 'styled-components';
+import { ThemeEntity } from 'styles/Theme';
 
 export const FooterStyles = styled.footer`
     padding: var(--spacingSmall) 0;
-    background-color: #006064;
     color: var(--colorWhite);
+    background-color: var(--colorDarkGray);
 
     .copyright {
         text-align: left;
 
-        ${({ theme }) => theme.media.smAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
             text-align: right;
         }
     }

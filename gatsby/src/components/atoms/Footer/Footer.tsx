@@ -1,19 +1,20 @@
 import React from 'react';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
+import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { FooterStyles } from './Footer.style';
+import { SanityQuery } from 'types/sanityQuery';
 
-export default function Footer() {
-    const query = useStaticQuery(graphql`
+export const Footer = () => {
+    const query: SanityQuery = useStaticQuery(graphql`
         {
             sanityWebsiteSettings {
                 copyright
             }
         }
     `);
-    const {
-        sanityWebsiteSettings: { copyright: copyRightName },
-    } = query;
+
+    const { copyright: copyRightName } = query.sanityWebsiteSettings;
+
     return (
         <FooterStyles>
             <BootsContainer between>
