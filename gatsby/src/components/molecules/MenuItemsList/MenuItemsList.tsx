@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { MenuItemsListStyle } from './MenuItemsList.style';
 import { CommonProps } from 'types/commonProps';
 import { SanityQuery } from 'types/sanityQuery';
 
-export const MenuItemsList = ({ style, className, onClick }: CommonProps) => {
+export const MenuItemsList: FC = ({ style, className, onClick }: CommonProps) => {
 
     const data: SanityQuery = useStaticQuery(graphql`
         query QueryMenuItems {

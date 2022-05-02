@@ -25,7 +25,7 @@ export const CardBlogEntry = React.forwardRef(({ data, small }: Props) => {
 
     const gatsbyImageData = data?.image?.asset?.gatsbyImageData;
 
-    let wrapper: gsap.DOMTarget = useRef(null);
+    let wrapper = useRef(null);
     useEffect(() => {
         gsap.set(wrapper, { autoAlpha: 0 });
 

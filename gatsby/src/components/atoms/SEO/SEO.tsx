@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { CommonProps } from 'types/commonProps';
@@ -11,7 +11,7 @@ interface Props extends CommonProps {
     title: string,
 }
 
-const SEO = ({ children, location, title }: Props) => {
+const SEO: FC = ({ children, location, title }: Props) => {
     const data: SanityQuery = useStaticQuery(graphql`
         {
             sanityWebsiteSettings {

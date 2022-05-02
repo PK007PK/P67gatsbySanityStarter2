@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { Link } from 'gatsby';
 
 import { Sling as Hamburger } from 'hamburger-react';
@@ -14,7 +14,7 @@ import { NavbarStyle } from './Navbar.style';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
-export const Navbar = () => {
+export const Navbar: FC = () => {
     const { toogleIsMenuActive, isMenuActive, diseableMenu } = useContext(AppContext);
 
     return (

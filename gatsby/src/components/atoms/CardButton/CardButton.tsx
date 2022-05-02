@@ -29,7 +29,7 @@ export const CardButton: FC = (props: Props) => {
             className={className}
             style={style}
         >
-            {React.memo(iconComponent)}
+            {()=>React.memo(iconComponent)}
             <h3>{title}</h3>
             {children}
         </CardButtonStyles>

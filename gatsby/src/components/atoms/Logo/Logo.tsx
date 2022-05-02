@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import logoSign from 'assets/images/LogoSignVector.svg';
 import { StyledLogo } from './Logo.style';
@@ -9,7 +9,7 @@ interface QueryStructure {
     }
 }
 
-export const Logo = () => {
+export const Logo: FC = () => {
 
     const {  sanityWebsiteSettings: {copyright = "Abc"} }: QueryStructure = useStaticQuery(graphql`
         {

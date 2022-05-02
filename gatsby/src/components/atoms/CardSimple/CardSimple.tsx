@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { CommonProps } from 'types/commonProps';
 import { CardSimpleStyles } from './CardSimple.styles';
 
@@ -10,7 +10,7 @@ interface Props extends CommonProps {
     }
 }
 
-export const CardSimple = ({ data, className }: Props) => {
+export const CardSimple: FC = ({ data, className }: Props) => {
     const { projectName: title, color, backgroundColor } = data;
     
     return (
