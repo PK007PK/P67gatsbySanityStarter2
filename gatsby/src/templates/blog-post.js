@@ -2,11 +2,11 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import SectionBlogPostHero from 'src/components/SectionBlogPostHero/SectionBlogPostHero';
 import BlockContent from '@sanity/block-content-to-react';
-import Layout from 'src/components/Layout/Layout';
+import { Layout } from 'src/components/Layout/Layout';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import SEO from 'src/components/atoms/SEO/SEO';
+import { ArticleStyling } from 'components/atoms/ArticleStyling/ArticleStyling';
 import OptionalBlogPostComponents from '../components/OptionalBlogPostComponents/OptionalBlogPostComponents';
-import { ArticleStyling } from '../components/ArticleStyling/ArticleStyling';
 
 const BlogPostTemplate = ({ data }) => {
     const { previous, next } = data;
