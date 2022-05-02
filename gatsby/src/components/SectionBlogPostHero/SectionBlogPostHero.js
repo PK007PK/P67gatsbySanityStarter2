@@ -1,7 +1,8 @@
-import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { Logo } from 'components/atoms/Logo/Logo';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
-import Logo from 'src/components/atoms/Logo/Logo.tsx';
+
 import { SectionBlogPostHeroStyle } from './SectionBlogPostHero.style';
 
 const SectionBlogPostHero = ({ leftComponent, data }) => {

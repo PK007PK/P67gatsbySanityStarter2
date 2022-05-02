@@ -1,6 +1,7 @@
-import { Link } from 'gatsby';
 import React from 'react';
-import CardBlogEntry2 from '../CardBlogEntry2/CardBlogEntry2';
+import { Link } from 'gatsby';
+
+import { CardBlogEntry } from 'components/molecules/CardBlogEntry/CardBlogEntry';
 import { PostsToDisplayStyles } from './PostsToDisplay.style';
 
 const PostsToDisplay = ({ data }) => (
@@ -9,7 +10,7 @@ const PostsToDisplay = ({ data }) => (
             .filter((item) => item.date !== null)
             .map((item) => (
                 <Link key={item.slug.current} to={`/${item.slug.current}`}>
-                    <CardBlogEntry2 data={item} />
+                    <CardBlogEntry data={item} />
                 </Link>
             ))}
     </PostsToDisplayStyles>

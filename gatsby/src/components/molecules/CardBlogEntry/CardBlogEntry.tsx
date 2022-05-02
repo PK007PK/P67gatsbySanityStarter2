@@ -1,18 +1,31 @@
 import React, { useEffect, useRef } from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Logo } from 'src/components/atoms/Logo/Logo';
-import { CardBlogEntry2Style } from './CardBlogEntry2.style';
+import { CardBlogEntryStyle } from './CardBlogEntry.style';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CardBlogEntry2 = React.forwardRef(({ data, small }) => {
+interface Props {
+    data: {
+        date: string,
+        name: string,
+        image: {
+            asset: {
+                gatsbyImageData: IGatsbyImageData,
+            }
+        }
+    },
+    small: boolean,
+}
+
+export const CardBlogEntry = React.forwardRef(({ data, small }: Props) => {
     const { name, date } = data;
 
     const gatsbyImageData = data?.image?.asset?.gatsbyImageData;
 
-    let wrapper = useRef(null);
+    let wrapper: gsap.DOMTarget = useRef(null);
     useEffect(() => {
         gsap.set(wrapper, { autoAlpha: 0 });
 
@@ -25,6 +38,7 @@ const CardBlogEntry2 = React.forwardRef(({ data, small }) => {
             }
         );
 
+
         ScrollTrigger.create({
             trigger: wrapper,
             animation: cardAnimation,
@@ -33,7 +47,7 @@ const CardBlogEntry2 = React.forwardRef(({ data, small }) => {
     }, []);
 
     return (
-        <CardBlogEntry2Style small={small} ref={(el) => (wrapper = el)}>
+        <CardBlogEntryStyle small={small} ref={(el) => (wrapper = el)}>
             <div className="imgWrapper">
                 {gatsbyImageData ? (
                     <GatsbyImage
@@ -54,8 +68,6 @@ const CardBlogEntry2 = React.forwardRef(({ data, small }) => {
                     {date}
                 </time>
             </div>
-        </CardBlogEntry2Style>
+        </CardBlogEntryStyle>
     );
 });
-
-export default CardBlogEntry2;

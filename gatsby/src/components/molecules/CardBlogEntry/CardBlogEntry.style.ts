@@ -1,18 +1,23 @@
 import styled, { css } from 'styled-components';
+import { ThemeEntity } from 'styles/Theme';
 
-export const CardBlogEntry2Style = styled.div`
+interface Props {
+    small: boolean,
+}
+
+export const CardBlogEntryStyle = styled.div<Props>`
     position: relative;
     margin-bottom: var(--spacingMedium);
     transition: var(--transitionBasic);
     border-radius: var(--borderRadius);
 
-    ${({ theme }) => theme.media.smAbove} {
+    ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
         display: flex;
         flex-direction: ${({ small }) => (small ? 'column' : 'row')};
     }
 
     &:hover {
-        box-shadow: ${({ theme }) => theme.elevation.dp4};
+        box-shadow: ${({ theme }: {theme: ThemeEntity}) => theme.elevation.dp4};
     }
 
     .imgWrapper,

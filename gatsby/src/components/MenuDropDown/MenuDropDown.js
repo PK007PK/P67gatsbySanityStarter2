@@ -4,10 +4,12 @@ import { AppContext } from 'src/AppProvider';
 
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import { useStaticQuery, graphql, Link } from 'gatsby';
+
+import { CardBlogEntry } from 'components/molecules/CardBlogEntry/CardBlogEntry';
 import { categoriesUsed } from '../../hooks/categoriesUsed';
 import { tagsUsed } from '../../hooks/tagsUsed';
 import { MenuDropDownStyles } from './MenuDropDown.styles';
-import CardBlogEntry2 from '../CardBlogEntry2/CardBlogEntry2';
+
 import Submenu from '../Submenu/Submenu';
 
 export const MenuDropDown = () => {
@@ -95,7 +97,7 @@ export const MenuDropDown = () => {
                         {posts.map((item, i) => (
                             <BootsColumn key={i} sm={4}>
                                 <Link onClick={diseableMenu} to={`/${item.slug.current}`}>
-                                    <CardBlogEntry2 small data={item} />
+                                    <CardBlogEntry small data={item} />
                                 </Link>
                             </BootsColumn>
                         ))}
