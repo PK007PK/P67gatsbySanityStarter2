@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { ThemeEntity } from "styles/Theme";
+import { CommonProps } from "types/commonProps";
 
-interface Props {
-    color: string,
-    backgroundColor: string,
+interface Props extends CommonProps {
+    color?: string, 
+    backgroundColor?: string,
 }
 
 export const CardButtonStyles = styled.button<Props>`

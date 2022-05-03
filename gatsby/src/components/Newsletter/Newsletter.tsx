@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { GiLetterBomb } from '@react-icons/all-files/gi/GiLetterBomb';
-import { ButtonStyle } from 'src/components/atoms/Button/Button';
+
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import { Link } from 'gatsby';
 
 import { CardButton } from 'components/atoms/CardButton/CardButton';
-import { NewsletterStyle, CustomFormStyle, OpeningButton } from './NewsletterStyle';
+import { NewsletterStyle, CustomFormStyle } from './NewsletterStyle';
+import { ButtonStyle } from 'components/atoms/Button/Button';
 
 const CustomForm = ({ status, message, onValidated }) => {
     let email;
@@ -40,7 +41,7 @@ const CustomForm = ({ status, message, onValidated }) => {
                     </Link>
                 </p>
             </div>
-            <ButtonStyle full type="button" onClick={submit}>
+            <ButtonStyle full={true} type="button" onClick={submit}>
                 Wyślij
             </ButtonStyle>
         </NewsletterStyle>

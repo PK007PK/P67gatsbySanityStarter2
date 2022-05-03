@@ -1,18 +1,18 @@
 import { CardButtonStyles } from "./CardButton.styles";
-import React, { FC, JSXElementConstructor, useMemo } from 'react'
+import React, { FC } from 'react'
 import { CommonProps } from "types/commonProps";
 
 interface Props extends CommonProps {
     title: string, 
-    iconComponent: FC,
-    color: string, 
-    backgroundColor: string,
+    iconComponent?: React.ElementType,
+    color?: string, 
+    backgroundColor?: string,
 }
 
 export const CardButton: FC = (props: Props) => {
     const {
         title, 
-        iconComponent, 
+        iconComponent: IconComponent, 
         onClick, 
         color, 
         backgroundColor, 
@@ -20,8 +20,6 @@ export const CardButton: FC = (props: Props) => {
         style, 
         children,
     } = props;
-
-    const MemoIcon = iconComponent;
 
     return (
         <CardButtonStyles 
@@ -31,7 +29,7 @@ export const CardButton: FC = (props: Props) => {
             className={className}
             style={style}
         >
-            <MemoIcon />
+            {IconComponent && <IconComponent />}
             <h3>{title}</h3>
             {children}
         </CardButtonStyles>

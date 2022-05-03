@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { StylingProps } from 'types/stylingProps';
 
 interface Props extends StylingProps{
-    full: string;
-    secondary: boolean;
+    full?: boolean,
+    secondary?: boolean,
 }
 
 export const ButtonStyle = styled.button<Props>`

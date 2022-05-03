@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ThemeEntity } from 'styles/Theme';
 
 export const NewsletterStyle = styled.div`
     text-align: center;
@@ -8,7 +9,7 @@ export const NewsletterStyle = styled.div`
     background-color: rgba(0, 96, 100, 0.3);
     position: relative;
     border-radius: var(--borderRadius);
-    box-shadow: ${({ theme }) => theme.elevation.dp4};
+    box-shadow: ${({ theme }: {theme: ThemeEntity}) => theme.elevation.dp4};
 `;
 
 export const CustomFormStyle = styled.div`
@@ -65,29 +66,3 @@ export const CustomFormStyle = styled.div`
     }
 `;
 
-export const OpeningButton = styled.button`
-    height: 220px;
-    width: 100%;
-    border-radius: var(--borderRadius);
-    background-color: #006064;
-    color: white;
-    font-size: var(--fontSizeLead);
-    border: none;
-    transition: var(--transitionBasic);
-
-    &:hover {
-        box-shadow: ${({ theme }) => theme.elevation.dp4};
-    }
-
-    .innerWrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .icon {
-        width: 40px;
-        height: 50px;
-        margin-right: 10px;
-    }
-`;
