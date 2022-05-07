@@ -4,10 +4,12 @@ import { ButtonStyle } from 'components/atoms/Button/Button';
 import { FormContactStyle } from './FormContact.style';
 import { formContactTexts } from './FormContact.texts';
 import { languageCheck } from 'hooks/languageCheck';
+import { websiteOwnerFormalNameCheck } from 'hooks/websiteOwnerFormalNameCheck';
 
 export const FormContact: React.FunctionComponent = () => {
     const lang = languageCheck();
-    const texts = formContactTexts();
+    const formalName = websiteOwnerFormalNameCheck()
+    const texts = formContactTexts(formalName);
     return (
         <FormContactStyle
             name="contact v1"
@@ -43,7 +45,7 @@ export const FormContact: React.FunctionComponent = () => {
             <div className="wrapper">
                 <label htmlFor="message">
                     {texts.message[lang]}
-                    <br /> <textarea row="4" type="email" name="message" />
+                    <br /> <textarea rows={4} name="message" />
                 </label>
             </div>
             <div className="acceptPolicy">
