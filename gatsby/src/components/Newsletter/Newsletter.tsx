@@ -57,7 +57,6 @@ const Newsletter = ({ className, style }) => {
                 <CardButton
                     title="Newsletter"
                     iconComponent={() => <GiLetterBomb className="icon" />}
-                    type="button"
                     onClick={() => setOpen(!open)}
                 />
             )}
