@@ -6,7 +6,7 @@ import { CardButton } from 'components/atoms/CardButton/CardButton';
 import { CommonProps } from 'types/commonProps';
 import { languageCheck } from 'hooks/languageCheck'
 import { CardContactFormTexts } from './CardContactForm.texts';
-import { FormContact } from 'components/FormContact/FormContact';
+import { FormContact } from 'components/molecules/FormContact/FormContact';
 
 interface Props extends CommonProps {}
 
