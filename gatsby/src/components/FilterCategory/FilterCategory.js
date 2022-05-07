@@ -16,13 +16,6 @@ export default function FilterCategory({ location }) {
                     }
                 }
             }
-            allSanityBlogPosts {
-                nodes {
-                    categories {
-                        name
-                    }
-                }
-            }
         }
     `);
 
