@@ -10,7 +10,8 @@ import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/Boot
 import { ButtonStyle } from 'src/components/atoms/Button/Button.tsx';
 
 import { Layout } from 'components/organisms/Layout/Layout';
-import CardContactForm from 'components/CardContactForm/CardContactForm';
+
+import CardContactForm from 'components/molecules/CardContactForm/CardContactForm';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 import Newsletter from '../components/Newsletter/Newsletter';
