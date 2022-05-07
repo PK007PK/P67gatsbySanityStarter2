@@ -20,6 +20,7 @@ export interface SanityQuery {
             },
         }
         keywords?: string,
+        websiteOwnerFormalName: string,
         copyright: string,
     },
     sanityMenuData: {
