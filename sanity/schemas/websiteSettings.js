@@ -53,6 +53,12 @@ export default {
       description: 'Describe your blog for search engines and social media.',
     },
     {
+      name: 'websiteOwnerFormalName',
+      type: 'string',
+      title: 'Website owner formal name',
+      initialValue: 'Sanity copy',
+    },
+    {
       name: 'copyright',
       type: 'string',
       title: "Copyright's name",
@@ -69,8 +75,4 @@ export default {
       },
     },
   ],
-  initialValue: {
-    copyright: 'Def copyright',
-    title: 'Def title',
-  },
 };

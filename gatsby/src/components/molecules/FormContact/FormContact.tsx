@@ -1,9 +1,15 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { ButtonStyle } from 'src/components/atoms/Button/Button';
+import { ButtonStyle } from 'components/atoms/Button/Button';
 import { FormContactStyle } from './FormContact.style';
+import { formContactTexts } from './FormContact.texts';
+import { languageCheck } from 'hooks/languageCheck';
+import { websiteOwnerFormalNameCheck } from 'hooks/websiteOwnerFormalNameCheck';
 
-export default function FormContact() {
+export const FormContact: React.FunctionComponent = () => {
+    const lang = languageCheck();
+    const formalName = websiteOwnerFormalNameCheck()
+    const texts = formContactTexts(formalName);
     return (
         <FormContactStyle
             name="contact v1"
@@ -20,40 +26,39 @@ export default function FormContact() {
 
             <div className="wrapper">
                 <label htmlFor="first-name">
-                    Imię:
+                    {texts.firstName[lang]}
                     <br /> <input type="text" name="first-name" />
                 </label>
             </div>
             <div className="wrapper">
                 <label htmlFor="phone">
-                    Telefon:
+                    {texts.phoneNumber[lang]}
                     <br /> <input type="text" name="phone" />
                 </label>
             </div>
             <div className="wrapper">
                 <label htmlFor="email">
-                    Email:
+                    {texts.email[lang]}
                     <br /> <input type="email" name="email" />
                 </label>
             </div>
             <div className="wrapper">
                 <label htmlFor="message">
-                    Wiadomość:
-                    <br /> <textarea row="4" type="email" name="message" />
+                    {texts.message[lang]}
+                    <br /> <textarea rows={4} name="message" />
                 </label>
             </div>
             <div className="acceptPolicy">
                 <input className="check" type="checkbox" id="policy" name="policy" required />
                 <p className="text">
-                    Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych zgodnie z zasadami ochrony
-                    danych osobowych wyrażonymi w{' '}
+                    {texts.agreement[lang]}{' '}
                     <Link to="/polityka/">
-                        <strong>Polityce Prywatności.</strong>
+                        <strong>{texts.policy[lang]}</strong>
                     </Link>
                 </p>
             </div>
             <ButtonStyle full type="submit">
-                Wyślij
+                {texts.send[lang]}
             </ButtonStyle>
         </FormContactStyle>
     );
