@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import styled from 'styled-components';
+import { CommonProps } from 'types/commonProps';
 import { StylingProps } from 'types/stylingProps';
 
-interface Props extends StylingProps{
+interface Props extends CommonProps, StylingProps {
     full?: boolean,
     secondary?: boolean,
 }

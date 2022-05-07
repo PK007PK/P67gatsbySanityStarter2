@@ -11,7 +11,7 @@ interface Props extends CommonProps {
     title: string,
 }
 
-const SEO: FC = ({ children, location, title }: Props) => {
+const SEO: React.FunctionComponent<Props> = ({ children, location, title }) => {
     const data: SanityQuery = useStaticQuery(graphql`
         {
             sanityWebsiteSettings {

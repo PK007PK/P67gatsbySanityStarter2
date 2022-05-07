@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { CommonProps } from 'types/commonProps';
 import { ThemeEntity } from 'styles/Theme';
+import { StylingProps } from 'types/stylingProps';
 
-interface Props extends CommonProps {}
+interface Props extends CommonProps, StylingProps {}
 
 export const MenuItemsListStyle = styled.ul<Props>`
     display: none;

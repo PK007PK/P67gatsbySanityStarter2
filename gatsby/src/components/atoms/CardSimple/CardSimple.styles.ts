@@ -1,10 +1,8 @@
 import styled from 'styled-components';
+import { CommonProps } from 'types/commonProps';
+import { StylingProps } from 'types/stylingProps';
 
-interface Props {
-    color?: string,
-    backgroundColor?: string,
-    className?: string,
-}
+interface Props extends CommonProps, StylingProps {}
 
 export const CardSimpleStyles = styled.div<Props>`
     display: flex;

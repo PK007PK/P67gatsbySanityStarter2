@@ -10,7 +10,7 @@ interface Props extends CommonProps {
     }
 }
 
-export const CardSimple: FC = ({ data, className }: Props) => {
+export const CardSimple: React.FunctionComponent<Props> = ({ data, className }) => {
     const { projectName: title, color, backgroundColor } = data;
     
     return (

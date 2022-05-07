@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { ThemeEntity } from "styles/Theme";
 import { CommonProps } from "types/commonProps";
+import { StylingProps } from "types/stylingProps";
 
-interface Props extends CommonProps {
+interface Props extends CommonProps, StylingProps {
     color?: string, 
     backgroundColor?: string,
 }

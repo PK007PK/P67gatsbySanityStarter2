@@ -20,7 +20,7 @@ interface Props {
     small: boolean,
 }
 
-export const CardBlogEntry = React.forwardRef(({ data, small }: Props) => {
+export const CardBlogEntry: React.FunctionComponent<Props> = React.forwardRef(({ data, small }) => {
     const { name, date } = data;
 
     const gatsbyImageData = data?.image?.asset?.gatsbyImageData;

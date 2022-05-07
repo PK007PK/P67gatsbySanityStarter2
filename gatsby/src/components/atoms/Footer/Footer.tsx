@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import { FooterStyles } from './Footer.style';
 import { SanityQuery } from 'types/sanityQuery';
 
-export const Footer: FC = () => {
+export const Footer: React.FunctionComponent = () => {
     const query: SanityQuery = useStaticQuery(graphql`
         {
             sanityWebsiteSettings {

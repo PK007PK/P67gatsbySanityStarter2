@@ -4,7 +4,9 @@ import { MenuItemsListStyle } from './MenuItemsList.style';
 import { CommonProps } from 'types/commonProps';
 import { SanityQuery } from 'types/sanityQuery';
 
-export const MenuItemsList: FC = ({ style, className, onClick }: CommonProps) => {
+interface Props extends CommonProps {}
+
+export const MenuItemsList: React.FunctionComponent<Props> = ({ style, className, onClick }) => {
 
     const data: SanityQuery = useStaticQuery(graphql`
         query QueryMenuItems {
