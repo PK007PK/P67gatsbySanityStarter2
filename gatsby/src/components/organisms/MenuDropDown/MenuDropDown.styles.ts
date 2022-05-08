@@ -1,6 +1,11 @@
 import styled from 'styled-components';
+import { ThemeEntity } from 'styles/Theme';
+import { CommonProps } from 'types/commonProps';
+import { StylingProps } from 'types/stylingProps';
 
-export const MenuDropDownStyles = styled.div`
+interface Props extends CommonProps, StylingProps {}
+
+export const MenuDropDownStyles = styled.div<Props>`
     position: fixed;
     display: none;
     z-index: 5;
@@ -19,7 +24,7 @@ export const MenuDropDownStyles = styled.div`
         justify-content: center;
         width: 100%;
 
-        ${({ theme }) => theme.media.smAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
             margin-top: 50px;
         }
     }
@@ -36,7 +41,7 @@ export const MenuDropDownStyles = styled.div`
     .postsHeader {
         font-size: 18px;
 
-        ${({ theme }) => theme.media.smAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
             text-align: center;
             font-size: 22px;
         }
@@ -55,7 +60,7 @@ export const MenuDropDownStyles = styled.div`
     .submenuList {
         display: flex;
         flex-wrap: wrap;
-        ${({ theme }) => theme.media.smAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
             display: block;
         }
         padding: 0;
@@ -65,7 +70,7 @@ export const MenuDropDownStyles = styled.div`
         flex-grow: 1;
         font-size: 140px;
 
-        ${({ theme }) => theme.media.smAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
             font-size: 16px;
         }
     }
@@ -76,7 +81,7 @@ export const MenuDropDownStyles = styled.div`
         margin-bottom: 10px;
         margin-right: 20px;
 
-        ${({ theme }) => theme.media.smAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
             margin-right: 0px;
             margin-bottom: var(--spacingRegular);
         }
@@ -87,7 +92,7 @@ export const MenuDropDownStyles = styled.div`
 
     .postsHeader {
         display: none;
-        ${({ theme }) => theme.media.smAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
             display: block;
             text-align: center;
             margin-bottom: 20px;
@@ -98,7 +103,7 @@ export const MenuDropDownStyles = styled.div`
     .postsBar {
         display: none;
 
-        ${({ theme }) => theme.media.smAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
             display: flex;
         }
     }

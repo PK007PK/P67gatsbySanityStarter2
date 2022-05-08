@@ -9,11 +9,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
     data: {
-        date: string,
         name: string,
-        image: {
-            asset: {
-                gatsbyImageData: IGatsbyImageData,
+        position?: number,
+        slug: {
+            current: string,
+        },
+        lead?: string,
+        date?: string,
+        image?: {
+            asset?: {
+                gatsbyImageData?: IGatsbyImageData,
             }
         }
     },
