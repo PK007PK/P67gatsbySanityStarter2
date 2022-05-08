@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { categoriesUsed } from '../../hooks/categoriesUsed';
+import { categoriesUsed } from '../../../hooks/categoriesUsed';
 import { FilterCategoryStyle } from './FilterCategory.style';
 import { filterCategoryTexts } from './FilterCategory.texts'
 import { languageCheck } from 'hooks/languageCheck'
@@ -18,7 +18,7 @@ export const FilterCategory: FC<{location: Location}> = ({ location }) => {
 
     return (
         <FilterCategoryStyle>
-            <Link to="/1#blog" style={pathCheck(location) ? { color: '#00BFA5' } : null}>
+            <Link to="/1#blog" style={pathCheck(location) ? { color: 'var(--colorActiveSecondary)' } : null}>
                 <h2 className="title">{filterCategoryTexts.info[lang]}</h2>
             </Link>
             <div className="links">
@@ -27,7 +27,7 @@ export const FilterCategory: FC<{location: Location}> = ({ location }) => {
                         return (
                             <Link
                                 to={`/${category.slug.current}/1#blog`}
-                                style={pathCheck(location, category.slug.current) ? { color: '#00BFA5' } : null}
+                                style={pathCheck(location, category.slug.current) ? { color: 'var(--colorActiveSecondary)' } : null}
                                 key={category.slug.current}
                             >
                                 {category.name} ({counts[category.name]})

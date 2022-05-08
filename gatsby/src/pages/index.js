@@ -7,12 +7,12 @@ import { Pagination } from 'src/components/atoms/Pagination/Pagination';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import { Search } from 'src/components/search';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
-import { ButtonStyle } from 'src/components/atoms/Button/Button.tsx';
 
 import { Layout } from 'components/organisms/Layout/Layout';
 
 import CardContactForm from 'components/molecules/CardContactForm/CardContactForm';
-import { FilterCategory } from 'components/FilterCategory/FilterCategory';
+
+import { FilterCategory } from 'components/molecules/FilterCategory/FilterCategory';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 import Newsletter from '../components/Newsletter/Newsletter';
