@@ -7,10 +7,6 @@ import { pathCheck } from 'utils/pathCheck';
 import { useFilterCategoryGraphQLData } from './useFilterCategoryGraphQLData';
 import { Link } from 'gatsby';
 
-type Location = {
-    pathname: string,
-};
-
 export const FilterCategory: FC<{location: Location}> = ({ location }) => {
     const counts = categoriesUsed();
     const categories = useFilterCategoryGraphQLData();

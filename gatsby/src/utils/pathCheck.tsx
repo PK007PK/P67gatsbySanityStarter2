@@ -1,7 +1,3 @@
-type Location = {
-    pathname: string,
-};
-
 export function pathCheck(location: Location, slug?: string) {
     const locationArr = location.pathname.split('/');
     if (!slug && locationArr.length <= 2) {
