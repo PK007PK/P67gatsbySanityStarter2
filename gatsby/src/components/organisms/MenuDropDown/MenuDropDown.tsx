@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 
 import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
 import { CardBlogEntry } from 'components/molecules/CardBlogEntry/CardBlogEntry';
-import { Submenu } from 'components/Submenu/Submenu';
+import { Submenu } from 'components/molecules/Submenu/Submenu';
 
 import { MenuDropDownStyles } from './MenuDropDown.styles';
 import { useMenuDropDownGraphQLData } from './useMenuDropDownGraphQLData';
