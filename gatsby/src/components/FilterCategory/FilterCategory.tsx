@@ -1,37 +1,25 @@
-import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import React, { FC } from 'react';
 import { categoriesUsed } from '../../hooks/categoriesUsed';
 import { FilterCategoryStyle } from './FilterCategory.style';
-import pathCheck from '../../utils/pathCheck';
+import { filterCategoryTexts } from './FilterCategory.texts'
+import { languageCheck } from 'hooks/languageCheck'
+import { pathCheck } from 'utils/pathCheck';
+import { useFilterCategoryGraphQLData } from './useFilterCategoryGraphQLData';
+import { Link } from 'gatsby';
 
-export default function FilterCategory({ location }) {
+type Location = {
+    pathname: string,
+};
+
+export const FilterCategory: FC<{location: Location}> = ({ location }) => {
     const counts = categoriesUsed();
-    const data = useStaticQuery(graphql`
-        {
-            allSanityBlogPostsCategories(sort: { order: ASC, fields: position }) {
-                nodes {
-                    name
-                    slug {
-                        current
-                    }
-                }
-            }
-            allSanityBlogPosts {
-                nodes {
-                    categories {
-                        name
-                    }
-                }
-            }
-        }
-    `);
-
-    const categories = data.allSanityBlogPostsCategories.nodes;
+    const categories = useFilterCategoryGraphQLData();
+    const lang = languageCheck();
 
     return (
         <FilterCategoryStyle>
             <Link to="/1#blog" style={pathCheck(location) ? { color: '#00BFA5' } : null}>
-                <h2 className="title">Latest articles</h2>
+                <h2 className="title">{filterCategoryTexts.info[lang]}</h2>
             </Link>
             <div className="links">
                 {categories.map((category) => {

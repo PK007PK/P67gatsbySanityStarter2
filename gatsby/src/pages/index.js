@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from 'src/components/atoms/SEO/SEO.tsx';
-import FilterCategory from 'src/components/FilterCategory/FilterCategory';
+
 import FilterTags from 'src/components/FilterTags/FilterTags';
 import { Pagination } from 'src/components/atoms/Pagination/Pagination';
 import SectionHero from 'src/components/SectionHero/SectionHero';
@@ -12,6 +12,7 @@ import { ButtonStyle } from 'src/components/atoms/Button/Button.tsx';
 import { Layout } from 'components/organisms/Layout/Layout';
 
 import CardContactForm from 'components/molecules/CardContactForm/CardContactForm';
+import { FilterCategory } from 'components/FilterCategory/FilterCategory';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 import Newsletter from '../components/Newsletter/Newsletter';

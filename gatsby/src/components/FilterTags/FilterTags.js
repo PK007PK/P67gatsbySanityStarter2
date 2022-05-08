@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
+import { pathCheck } from 'utils/pathCheck';
 import { tagsUsed } from '../../hooks/tagsUsed';
 import { FilterTagsStyle } from './FilterTags.style';
-import pathCheck from '../../utils/pathCheck';
 
 export default function FilterTags({ location }) {
     const counts = tagsUsed();
