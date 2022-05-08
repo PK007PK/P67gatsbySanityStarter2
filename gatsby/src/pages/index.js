@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from 'src/components/atoms/SEO/SEO.tsx';
 
-import FilterTags from 'src/components/FilterTags/FilterTags';
 import { Pagination } from 'src/components/atoms/Pagination/Pagination';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import { Search } from 'src/components/search';
@@ -13,6 +12,7 @@ import { Layout } from 'components/organisms/Layout/Layout';
 import CardContactForm from 'components/molecules/CardContactForm/CardContactForm';
 
 import { FilterCategory } from 'components/molecules/FilterCategory/FilterCategory';
+import { FilterTags } from 'components/molecules/FilterTags/FilterTags';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 import Newsletter from '../components/Newsletter/Newsletter';
