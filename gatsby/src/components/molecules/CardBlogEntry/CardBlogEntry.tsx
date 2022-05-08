@@ -22,7 +22,7 @@ interface Props {
             }
         }
     },
-    small: boolean,
+    small?: boolean,
 }
 
 export const CardBlogEntry: React.FunctionComponent<Props> = React.forwardRef(({ data, small }) => {
