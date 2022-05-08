@@ -13,7 +13,7 @@ import { MenuDropDownStyles } from './MenuDropDown.styles';
 import Submenu from '../Submenu/Submenu';
 
 export const MenuDropDown = () => {
-    const { toogleIsMenuActive, isMenuActive, diseableMenu } = useContext(AppContext);
+    const { isMenuActive, diseableMenu } = useContext(AppContext);
     const data = useStaticQuery(graphql`
         query QueryMenuItems2 {
             sanityMenuData {
