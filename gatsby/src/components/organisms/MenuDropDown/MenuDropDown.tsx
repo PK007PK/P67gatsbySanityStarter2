@@ -1,18 +1,18 @@
 import React, { useEffect, useRef, useContext } from 'react';
+import { Link } from 'gatsby';
 import { gsap } from 'gsap';
-import { AppContext } from 'src/AppProvider';
 
 import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
-import { Link } from 'gatsby';
-
 import { CardBlogEntry } from 'components/molecules/CardBlogEntry/CardBlogEntry';
-import { categoriesUsed } from '../../../hooks/categoriesUsed';
-import { tagsUsed } from '../../../hooks/tagsUsed';
-import { MenuDropDownStyles } from './MenuDropDown.styles';
+import { Submenu } from 'components/Submenu/Submenu';
 
-import Submenu from '../../Submenu/Submenu';
+import { MenuDropDownStyles } from './MenuDropDown.styles';
 import { useMenuDropDownGraphQLData } from './useMenuDropDownGraphQLData';
 import { menuDropDownTexts } from './MenuDropDown.texts';
+
+import { AppContext } from 'src/AppProvider';
+import { categoriesUsed } from '../../../hooks/categoriesUsed';
+import { tagsUsed } from '../../../hooks/tagsUsed';
 import { languageCheck } from 'hooks/languageCheck';
 
 export const MenuDropDown: React.FunctionComponent = () => {
@@ -37,18 +37,27 @@ export const MenuDropDown: React.FunctionComponent = () => {
                 <nav>
                     <BootsRow className="submenuBar">
                         <BootsColumn sm={4}>
-                            <Submenu onClick={diseableMenu} name="Sites" data={menuData} />
-                        </BootsColumn>
-                        <BootsColumn sm={4}>
-                            <Submenu
-                                checkObject={categoriesUsed()}
-                                onClick={diseableMenu}
-                                name="Categories"
-                                data={categories}
+                            <Submenu 
+                                onClick={diseableMenu} 
+                                name="Sites" 
+                                data={menuData} 
                             />
                         </BootsColumn>
                         <BootsColumn sm={4}>
-                            <Submenu checkObject={tagsUsed()} onClick={diseableMenu} name="Tags" data={tags} />
+                            <Submenu
+                                onClick={diseableMenu}
+                                name="Categories"
+                                data={categories}
+                                checkObject={categoriesUsed()}
+                            />
+                        </BootsColumn>
+                        <BootsColumn sm={4}>
+                            <Submenu 
+                                onClick={diseableMenu} 
+                                name="Tags" 
+                                data={tags} 
+                                checkObject={tagsUsed()} 
+                            />
                         </BootsColumn>
                     </BootsRow>
                     <BootsRow className="latestArticlesTitleBar">
