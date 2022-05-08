@@ -1,18 +1,25 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
 import { categoriesUsed } from '../../hooks/categoriesUsed';
 import { FilterCategoryStyle } from './FilterCategory.style';
+import { filterCategoryTexts } from './FilterCategory.texts'
+import { languageCheck } from 'hooks/languageCheck'
 import pathCheck from '../../utils/pathCheck';
 import { useFilterCategoryGraphQLData } from './useFilterCategoryGraphQLData';
+import { Link } from 'gatsby';
 
-export const FilterCategory = ({ location }) => {
+interface Props {
+    location: string,
+}
+
+export const FilterCategory: React.FunctionComponent<Props> = ({ location }) => {
     const counts = categoriesUsed();
     const categories = useFilterCategoryGraphQLData();
+    const lang = languageCheck();
 
     return (
         <FilterCategoryStyle>
             <Link to="/1#blog" style={pathCheck(location) ? { color: '#00BFA5' } : null}>
-                <h2 className="title">Latest articles</h2>
+                <h2 className="title">{filterCategoryTexts.info[lang]}</h2>
             </Link>
             <div className="links">
                 {categories.map((category) => {

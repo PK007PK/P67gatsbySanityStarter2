@@ -1,24 +1,21 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-interface GraphQlData {
-    allSanityBlogPostsCategories: {
-        nodes: {
-            name: string,
-            slug: {
-                current: string,
-            }
-        }
-    }
-}
-
-interface Categories {
+interface NodeData {
     name: string;
     slug: {
         current: string;
     };
 }
 
-export function useFilterCategoryGraphQLData(): Categories {
+interface GraphQlData {
+    allSanityBlogPostsCategories: {
+        nodes: NodeData[]
+    }
+}
+
+type ArrayOfNodes = NodeData[]
+
+export function useFilterCategoryGraphQLData(): ArrayOfNodes {
     const data: GraphQlData = useStaticQuery(graphql`
         {
             allSanityBlogPostsCategories(sort: { order: ASC, fields: position }) {
@@ -32,6 +29,9 @@ export function useFilterCategoryGraphQLData(): Categories {
         }
     `);
 
-    const {nodes: categories } = data.allSanityBlogPostsCategories;
+    const categories = data.allSanityBlogPostsCategories.nodes;
+    
+    console.log("categories", categories);
+    
     return categories;
 }
