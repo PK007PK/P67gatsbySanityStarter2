@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { categoriesUsed } from '../../hooks/categoriesUsed';
 import { FilterCategoryStyle } from './FilterCategory.style';
 import { filterCategoryTexts } from './FilterCategory.texts'
 import { languageCheck } from 'hooks/languageCheck'
-import pathCheck from '../../utils/pathCheck';
+import { pathCheck } from 'utils/pathCheck';
 import { useFilterCategoryGraphQLData } from './useFilterCategoryGraphQLData';
 import { Link } from 'gatsby';
 
-interface Props {
-    location: string,
-}
+type Location = {
+    pathname: string,
+};
 
-export const FilterCategory: React.FunctionComponent<Props> = ({ location }) => {
+export const FilterCategory: FC<{location: Location}> = ({ location }) => {
     const counts = categoriesUsed();
     const categories = useFilterCategoryGraphQLData();
     const lang = languageCheck();
