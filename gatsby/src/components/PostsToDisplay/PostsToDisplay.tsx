@@ -4,7 +4,19 @@ import { Link } from 'gatsby';
 import { CardBlogEntry } from 'components/molecules/CardBlogEntry/CardBlogEntry';
 import { PostsToDisplayStyles } from './PostsToDisplay.style';
 
-const PostsToDisplay = ({ data }) => (
+type DataItem = {
+    slug: {
+        current: string,
+    },
+    name: string,
+    date: string,
+}
+
+interface Props {
+    data: DataItem[],
+}
+
+export const PostsToDisplay: React.FunctionComponent<Props> = ({ data }) => (
     <PostsToDisplayStyles>
         {data
             .filter((item) => item.date !== null)
@@ -16,4 +28,3 @@ const PostsToDisplay = ({ data }) => (
     </PostsToDisplayStyles>
 );
 
-export default PostsToDisplay;
