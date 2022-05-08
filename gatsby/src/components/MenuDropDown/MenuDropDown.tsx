@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useContext } from 'react';
 import { gsap } from 'gsap';
 import { AppContext } from 'src/AppProvider';
 
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
+import { Link } from 'gatsby';
 
 import { CardBlogEntry } from 'components/molecules/CardBlogEntry/CardBlogEntry';
 import { categoriesUsed } from '../../hooks/categoriesUsed';
@@ -11,58 +11,21 @@ import { tagsUsed } from '../../hooks/tagsUsed';
 import { MenuDropDownStyles } from './MenuDropDown.styles';
 
 import Submenu from '../Submenu/Submenu';
+import { useMenuDropDownGraphQLData } from './useMenuDropDownGraphQLData';
+import { menuDropDownTexts } from './MenuDropDown.texts';
+import { languageCheck } from 'hooks/languageCheck';
 
-export const MenuDropDown = () => {
+export const MenuDropDown: React.FunctionComponent = () => {
+
     const { isMenuActive, diseableMenu } = useContext(AppContext);
-    const data = useStaticQuery(graphql`
-        query QueryMenuItems2 {
-            sanityMenuData {
-                menuItems {
-                    pageSlug
-                    pageName
-                }
-            }
-            allSanityBlogPostsCategories(sort: { order: ASC, fields: position }) {
-                nodes {
-                    name
-                    position
-                    slug {
-                        current
-                    }
-                }
-            }
-            allSanityBlogPostsTags(sort: { order: ASC, fields: position }) {
-                nodes {
-                    name
-                    position
-                    slug {
-                        current
-                    }
-                }
-            }
-            allSanityBlogPosts(limit: 3, sort: { order: DESC, fields: date }) {
-                nodes {
-                    name
-                    lead
-                    date(formatString: "")
-                    slug {
-                        current
-                    }
-                    image {
-                        asset {
-                            gatsbyImageData(width: 400)
-                        }
-                    }
-                }
-            }
-        }
-    `);
-    const menuData = data.sanityMenuData.menuItems;
-    const categories = data.allSanityBlogPostsCategories.nodes;
-    const tags = data.allSanityBlogPostsTags.nodes;
-    const posts = data.allSanityBlogPosts.nodes;
-
+    const {
+        menuData,
+        categories,
+        tags,
+        posts,
+    } = useMenuDropDownGraphQLData();
     let menuWrapper = useRef(null);
+    const lang = languageCheck();
 
     useEffect(() => {
         gsap.to(menuWrapper, { duration: 0.3, css: { display: 'block', top: 0 } });
@@ -90,7 +53,7 @@ export const MenuDropDown = () => {
                     </BootsRow>
                     <BootsRow className="latestArticlesTitleBar">
                         <BootsColumn sm={4}>
-                            <h2 className="postsHeader">Latest articles:</h2>
+                            <h2 className="postsHeader">{menuDropDownTexts.title[lang]}</h2>
                         </BootsColumn>
                     </BootsRow>
                     <BootsRow className="postsBar">
