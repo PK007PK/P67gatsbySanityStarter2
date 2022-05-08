@@ -8,7 +8,7 @@ import BlockContent from '@sanity/block-content-to-react';
 
 import { Layout } from 'components/organisms/Layout/Layout';
 import { ArticleStyling } from 'components/atoms/ArticleStyling/ArticleStyling';
-import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
+import { HeroTextBlock } from 'components/atoms/HeroTextBlock/HeroTextBlock';
 
 const About = ({ data }) => {
     const {

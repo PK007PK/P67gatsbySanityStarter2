@@ -4,12 +4,13 @@ import SEO from 'src/components/atoms/SEO/SEO.tsx';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
-import FormContact from 'src/components/FormContact/FormContact';
+
 import BlockContent from '@sanity/block-content-to-react';
 
 import { Layout } from 'components/organisms/Layout/Layout';
 import { ArticleStyling } from 'components/atoms/ArticleStyling/ArticleStyling';
-import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
+import { FormContact } from 'components/molecules/FormContact/FormContact';
+import { HeroTextBlock } from 'components/atoms/HeroTextBlock/HeroTextBlock';
 
 const KontaktPage = ({ data }) => {
     const {

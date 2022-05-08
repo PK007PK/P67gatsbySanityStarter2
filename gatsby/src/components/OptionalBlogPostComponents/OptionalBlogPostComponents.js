@@ -2,8 +2,9 @@ import React from 'react';
 import Newsletter from 'src/components/Newsletter/Newsletter';
 
 import { CardSimple } from 'components/atoms/CardSimple/CardSimple';
+import CardContactForm from 'components/molecules/CardContactForm/CardContactForm';
 import SocialShare from '../SocialShare/SocialShare';
-import CardContactForm from '../CardContactForm/CardContactForm';
+
 import { OptionalBlogPostComponentsStyle } from './OptionalBlogPostComponents.style';
 
 const OptionalBlogPostComponents = ({ data, name, excerpt }) => (

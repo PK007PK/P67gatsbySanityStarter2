@@ -9,15 +9,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
     data: {
-        date: string,
         name: string,
-        image: {
-            asset: {
-                gatsbyImageData: IGatsbyImageData,
+        position?: number,
+        slug: {
+            current: string,
+        },
+        lead?: string,
+        date?: string,
+        image?: {
+            asset?: {
+                gatsbyImageData?: IGatsbyImageData,
             }
         }
     },
-    small: boolean,
+    small?: boolean,
 }
 
 export const CardBlogEntry: React.FunctionComponent<Props> = React.forwardRef(({ data, small }) => {

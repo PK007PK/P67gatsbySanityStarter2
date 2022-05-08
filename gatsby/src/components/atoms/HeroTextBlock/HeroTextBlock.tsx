@@ -1,7 +1,13 @@
 import React from 'react';
+import { CommonProps } from 'types/commonProps';
 import { HeroTextBlockStyle } from './HeroTextBlock.style';
 
-const TextBlockIndex = ({ style, className, title, description }) => (
+interface Props extends CommonProps {
+    title: string,
+    description: string,
+}
+
+export const HeroTextBlock: React.FunctionComponent<Props> = ({ style, className, title, description }) => (
     <div>
         <HeroTextBlockStyle style={style} className={className}>
             <h1 className="title">{title}</h1>
@@ -9,5 +15,3 @@ const TextBlockIndex = ({ style, className, title, description }) => (
         </HeroTextBlockStyle>
     </div>
 );
-
-export default TextBlockIndex;

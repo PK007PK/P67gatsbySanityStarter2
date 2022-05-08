@@ -1,5 +1,5 @@
 export interface SanityQuery {
-    sanityWebsiteSettings: {
+    sanityWebsiteSettings?: {
         title?: string,
         description?: string,
         lang?: string,
@@ -8,7 +8,7 @@ export interface SanityQuery {
                 metadata?: {
                     lqip?: string,
                 },
-                url: string,
+                url?: string,
             },
         }
         sitePreviev?: {
@@ -16,13 +16,22 @@ export interface SanityQuery {
                 metadata?: {
                     lqip?: string,
                 },
-                url: string,
+                url?: string,
             },
         }
         keywords?: string,
-        copyright: string,
+        websiteOwnerFormalName?: string,
+        copyright?: string,
     },
-    sanityMenuData: {
-        menuItems: { pageSlug: string, pageName: string }[]
+    sanityMenuData?: {
+        menuItems?: { pageSlug?: string, pageName?: string }[]
+    },
+    allSanityBlogPostsCategories?: {
+        nodes?: {
+            name?: string,
+            slug?: {
+                current?: string,
+            }
+        }
     }
 }

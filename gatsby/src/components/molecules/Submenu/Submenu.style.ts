@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ThemeEntity } from 'styles/Theme';
 
 export const SubmenuStyle = styled.div`
     .submenuTitle {
@@ -7,7 +8,7 @@ export const SubmenuStyle = styled.div`
     .submenuList {
         display: flex;
         flex-wrap: wrap;
-        ${({ theme }) => theme.media.smAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
             display: block;
         }
         padding: 0;
@@ -17,7 +18,7 @@ export const SubmenuStyle = styled.div`
         flex-grow: 1;
         font-size: 140px;
 
-        ${({ theme }) => theme.media.smAbove} {
+        ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
             font-size: 16px;
         }
     }
