@@ -28,10 +28,7 @@ export function useFilterCategoryGraphQLData(): ArrayOfNodes {
             }
         }
     `);
-
+    
     const categories = data.allSanityBlogPostsCategories.nodes;
-    
-    console.log("categories", categories);
-    
     return categories;
 }
