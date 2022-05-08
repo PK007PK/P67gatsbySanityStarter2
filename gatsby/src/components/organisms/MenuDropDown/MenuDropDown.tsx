@@ -6,11 +6,11 @@ import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsEle
 import { Link } from 'gatsby';
 
 import { CardBlogEntry } from 'components/molecules/CardBlogEntry/CardBlogEntry';
-import { categoriesUsed } from '../../hooks/categoriesUsed';
-import { tagsUsed } from '../../hooks/tagsUsed';
+import { categoriesUsed } from '../../../hooks/categoriesUsed';
+import { tagsUsed } from '../../../hooks/tagsUsed';
 import { MenuDropDownStyles } from './MenuDropDown.styles';
 
-import Submenu from '../Submenu/Submenu';
+import Submenu from '../../Submenu/Submenu';
 import { useMenuDropDownGraphQLData } from './useMenuDropDownGraphQLData';
 import { menuDropDownTexts } from './MenuDropDown.texts';
 import { languageCheck } from 'hooks/languageCheck';
