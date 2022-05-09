@@ -1,16 +1,17 @@
 import React, { useState, forwardRef, useImperativeHandle } from 'react';
 import { AiFillCloseCircle as Exit } from '@react-icons/all-files/ai/AiFillCloseCircle';
-import Portal from '../../gatsby/portal';
+
 import { ModalStyles } from './Modal.style';
+import { CommonProps } from 'types/commonProps';
+import Portal from 'gatsby/portal';
+
+interface Props extends CommonProps {
+    title: string,
+}
 
 // eslint-disable-next-line react/display-name
-const Modal = forwardRef((props, ref) => {
+export const Modal = forwardRef((props: Props, ref) => {
     const [display, setDisplay] = useState(false);
-
-    useImperativeHandle(ref, () => ({
-        openModal: () => handleOpen(),
-        closeModal: () => handleClose(),
-    }));
 
     const handleOpen = () => {
         setDisplay(true);
@@ -20,6 +21,11 @@ const Modal = forwardRef((props, ref) => {
         setDisplay(false);
     };
 
+    useImperativeHandle(ref, () => ({
+        openModal: () => handleOpen(),
+        closeModal: () => handleClose(),
+    }));
+
     if (display) {
         return (
             <Portal>
@@ -27,7 +33,7 @@ const Modal = forwardRef((props, ref) => {
                     <div className="modal">
                         <div className="topWrapper">
                             <h3 className="title">{props.title}</h3>{' '}
-                            <button className="exitButton" tabIndex="0" type="button" onClick={handleClose}>
+                            <button className="exitButton" tabIndex={0} type="button" onClick={handleClose}>
                                 <Exit className="exitIcon" />
                             </button>
                         </div>
@@ -40,5 +46,3 @@ const Modal = forwardRef((props, ref) => {
 
     return null;
 });
-
-export default Modal;
