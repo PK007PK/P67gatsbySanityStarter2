@@ -6,7 +6,7 @@ import { CardButton } from 'components/atoms/CardButton/CardButton';
 import { GiLetterBomb } from '@react-icons/all-files/gi/GiLetterBomb';
 import { NewsletterStyle } from './NewsletterStyle';
 import { CommonProps } from 'types/commonProps';
-import { FormNewsletter } from 'components/FormNewsletter/FormNewsletter';
+import { FormNewsletter } from 'components/molecules/FormNewsletter/FormNewsletter';
 import { useNewsletterGraphQLData } from './useNewsletterGraphQLData';
 
 interface NewsletterProps extends CommonProps {}

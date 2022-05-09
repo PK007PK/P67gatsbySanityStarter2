@@ -1,8 +1,8 @@
 import React from 'react';
-import Newsletter from 'src/components/Newsletter/Newsletter';
 
 import { CardSimple } from 'components/atoms/CardSimple/CardSimple';
 import CardContactForm from 'components/molecules/CardContactForm/CardContactForm';
+import { Newsletter } from 'components/organisms/Newsletter/Newsletter';
 import SocialShare from '../SocialShare/SocialShare';
 
 import { OptionalBlogPostComponentsStyle } from './OptionalBlogPostComponents.style';
