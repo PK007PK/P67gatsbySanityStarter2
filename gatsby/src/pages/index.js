@@ -14,8 +14,8 @@ import CardContactForm from 'components/molecules/CardContactForm/CardContactFor
 import { FilterCategory } from 'components/molecules/FilterCategory/FilterCategory';
 import { FilterTags } from 'components/molecules/FilterTags/FilterTags';
 import { HeroTextBlock } from 'components/atoms/HeroTextBlock/HeroTextBlock';
+import { Newsletter } from 'components/organisms/Newsletter/Newsletter';
 import { PostsToDisplay } from '../components/molecules/PostsToDisplay/PostsToDisplay';
-import Newsletter from '../components/Newsletter/Newsletter';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 

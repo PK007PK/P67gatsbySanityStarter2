@@ -18,7 +18,14 @@ export default () =>
         .title('Website main menu')
         .child(S.document().schemaType('menuData').documentId('menuData')),
       S.listItem()
-        .title('Strona główna')
+        .title('Third Party Services Integration')
+        .child(
+          S.document()
+            .schemaType('thirdPartyServicesIntegration')
+            .documentId('thirdPartyServicesIntegration')
+        ),
+      S.listItem()
+        .title('Home page details')
         .child(S.document().schemaType('pageHome').documentId('pageHome')),
       S.listItem()
         .title('Page "About"')
@@ -44,6 +51,7 @@ export default () =>
           ![
             'websiteSettings',
             'blogConfig',
+            'thirdPartyServicesIntegration',
             'allProjectsData',
             'pageHome',
             'pageBlog',
