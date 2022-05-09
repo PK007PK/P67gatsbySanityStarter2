@@ -1,56 +1,20 @@
 import React, { useState } from 'react';
-import { GiLetterBomb } from '@react-icons/all-files/gi/GiLetterBomb';
 
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
-import { Link } from 'gatsby';
-
 import { CardButton } from 'components/atoms/CardButton/CardButton';
-import { NewsletterStyle, CustomFormStyle } from './NewsletterStyle';
-import { ButtonStyle } from 'components/atoms/Button/Button';
 
-const CustomForm = ({ status, message, onValidated }) => {
-    let email;
-    let name;
-    const submit = () =>
-        email &&
-        name &&
-        email.value.indexOf('@') > -1 &&
-        onValidated({
-            EMAIL: email.value,
-            NAME: name.value,
-        });
+import { GiLetterBomb } from '@react-icons/all-files/gi/GiLetterBomb';
+import { NewsletterStyle } from './NewsletterStyle';
+import { CommonProps } from 'types/commonProps';
+import { FormNewsletter } from 'components/FormNewsletter/FormNewsletter';
+import { useNewsletterGraphQLData } from './useNewsletterGraphQLData';
 
-    return (
-        <NewsletterStyle>
-            <h3>Newsletter</h3>
-            <p>Jeżeli chcesz być powiadamiany o ważnych wydarzeniach zapisz się do newslettera</p>
-            {status === 'sending' && <div style={{ color: 'blue' }}>sending...</div>}
-            {status === 'error' && <div style={{ color: 'red' }} dangerouslySetInnerHTML={{ __html: message }} />}
-            {status === 'success' && <div style={{ color: 'green' }} dangerouslySetInnerHTML={{ __html: message }} />}
-            <input ref={(node) => (name = node)} type="text" placeholder="Imię..." />
-            <br />
-            <input ref={(node) => (email = node)} type="email" placeholder="Email..." />
-            <br />
-            <div className="acceptPolicy">
-                <input className="check" type="checkbox" id="policy" name="policy" required />
-                <p className="text">
-                    Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych zgodnie z zasadami ochrony
-                    danych osobowych wyrażonymi w{' '}
-                    <Link to="/polityka/">
-                        <strong>Polityce Prywatności.</strong>
-                    </Link>
-                </p>
-            </div>
-            <ButtonStyle full={true} type="button" onClick={submit}>
-                Wyślij
-            </ButtonStyle>
-        </NewsletterStyle>
-    );
-};
+interface NewsletterProps extends CommonProps {}
 
-const Newsletter = ({ className, style }) => {
+export const Newsletter: React.FunctionComponent<NewsletterProps> = ({ className, style }) => {
     const [open, setOpen] = useState(false);
-    const url = 'https://ekomonterzy.us5.list-manage.com/subscribe/post?u=5443f38031d07f8510839e39d&amp;id=9032a099ae';
+    const url = useNewsletterGraphQLData();
+
     return (
         <div style={style} className={className}>
             {!open && (
@@ -61,7 +25,7 @@ const Newsletter = ({ className, style }) => {
                 />
             )}
             {open && (
-                <CustomFormStyle>
+                <NewsletterStyle>
                     <button className="closeBtn" type="button" onClick={() => setOpen(!open)}>
                         X
                     </button>
@@ -69,17 +33,15 @@ const Newsletter = ({ className, style }) => {
                     <MailchimpSubscribe
                         url={url}
                         render={({ subscribe, status, message }) => (
-                            <CustomForm
+                            <FormNewsletter
                                 status={status}
                                 message={message}
                                 onValidated={(formData) => subscribe(formData)}
                             />
                         )}
                     />
-                </CustomFormStyle>
+                </NewsletterStyle>
             )}
         </div>
     );
 };
-
-export default Newsletter;
