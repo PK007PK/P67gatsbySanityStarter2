@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import websiteSettings from './websiteSettings';
 import blogConfig from './blogConfig';
 import pageHome from './pageHome';
+import thirdPartyServicesIntegration from './thirdPartyServicesIntegration';
 import pageAbout from './pageAbout';
 import pageKontakt from './pageKontakt';
 import pagePolicy from './pagePolicy';
@@ -31,6 +32,7 @@ export default createSchema({
   types: schemaTypes.concat([
     websiteSettings,
     blogConfig,
+    thirdPartyServicesIntegration,
     gallery,
     galleryItem,
     pageHome,
