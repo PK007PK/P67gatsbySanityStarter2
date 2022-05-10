@@ -5,13 +5,14 @@ import { CommonProps } from 'types/commonProps';
 import { SanityQuery } from 'types/sanityQuery';
 
 interface Props extends CommonProps {
-    location: {
+    location?: {
         href: string,
     },
     title: string,
+    templateDescription?: string,
 }
 
-const SEO: React.FunctionComponent<Props> = ({ children, location, title }) => {
+export const SEO: React.FunctionComponent<Props> = ({ children, location, title, templateDescription }) => {
     const data: SanityQuery = useStaticQuery(graphql`
         {
             sanityWebsiteSettings {
@@ -52,10 +53,8 @@ const SEO: React.FunctionComponent<Props> = ({ children, location, title }) => {
             <meta property="og:image" content={sitePreview || undefined} />
             <meta property="og:title" content={title} key="ogtitle" />
             <meta property="og:site_name" content={data.sanityWebsiteSettings?.title} key="ogsitename" />
-            <meta property="og:description" content={data.sanityWebsiteSettings?.description} key="ogdesc" />
+            <meta property="og:description" content={templateDescription ?? data.sanityWebsiteSettings?.description} key="ogdesc" />
             {children}
         </Helmet>
     );
 };
-
-export default SEO;

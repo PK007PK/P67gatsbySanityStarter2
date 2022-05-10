@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SEO from 'src/components/atoms/SEO/SEO.tsx';
+import { SEO } from 'src/components/atoms/SEO/SEO.tsx';
 
 import { Pagination } from 'src/components/atoms/Pagination/Pagination';
 import SectionHero from 'src/components/SectionHero/SectionHero';
