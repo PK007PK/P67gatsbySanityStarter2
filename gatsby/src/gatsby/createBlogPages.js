@@ -65,7 +65,7 @@ export async function createBlogPages({ graphql, actions, reporter }) {
     Array.from({ length: pageCount }).forEach((_, i) => {
         actions.createPage({
             path: `/${i + 1}`,
-            component: path.resolve('./src/pages/index.js'),
+            component: path.resolve('./src/pages/index.tsx'),
             // This data is pass to the template when we create it
             context: {
                 skip: i * pageSize,

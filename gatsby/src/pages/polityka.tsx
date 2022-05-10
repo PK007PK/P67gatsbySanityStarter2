@@ -1,45 +1,55 @@
 import React from 'react';
-
-import { SEO } from 'src/components/atoms/SEO/SEO.tsx';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
-import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
 
 import BlockContent from '@sanity/block-content-to-react';
-
 import { Layout } from 'components/organisms/Layout/Layout';
-import { ArticleStyling } from 'components/atoms/ArticleStyling/ArticleStyling';
+import { SEO } from 'components/atoms/SEO/SEO';
+import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
+import { SectionHero } from 'components/SectionHero/SectionHero';
 import { FormContact } from 'components/molecules/FormContact/FormContact';
 import { HeroTextBlock } from 'components/atoms/HeroTextBlock/HeroTextBlock';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
-const KontaktPage = ({ data }) => {
+interface Props {
+    data: {
+        sanityPagePolicy: {
+            title: string,
+            description: string,
+            image: {
+                asset: {
+                    gatsbyImageData?: IGatsbyImageData,
+                },
+            },
+            _rawRichText: string,
+        },
+    },
+};
+
+const PolitykaPage: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
     const {
         title,
-        tags: heroTags,
         description,
         image: {
             asset: { gatsbyImageData },
         },
         _rawRichText,
-    } = data.sanityPageKontakt;
+    } = data.sanityPagePolicy;
 
     return (
         <Layout>
             <SEO title="Kontakt" />
             <SectionHero
-                leftComponent={() => <HeroTextBlock title={title} heroTags={heroTags} description={description} />}
+                leftComponent={() => <HeroTextBlock title={title} description={description} />}
             />
             <BootsContainer>
                 <BootsRow between style={{ margin: '50px 0 50px' }}>
                     <BootsColumn md={6}>
-                        <ArticleStyling className="blog-post">
-                            <BlockContent
-                                blocks={_rawRichText}
-                                dataset="production"
-                                url=""
-                                projectId={process.env.SANITY_PROJECT_ID}
-                            />
-                        </ArticleStyling>
+                        <BlockContent
+                            blocks={_rawRichText}
+                            dataset="production"
+                            url=""
+                            projectId={process.env.SANITY_PROJECT_ID}
+                        />
                     </BootsColumn>
                     <BootsColumn md={5}>
                         <FormContact />
@@ -52,7 +62,7 @@ const KontaktPage = ({ data }) => {
 
 export const pageQuery = graphql`
     query {
-        sanityPageKontakt {
+        sanityPagePolicy {
             title
             tags
             description
@@ -66,4 +76,4 @@ export const pageQuery = graphql`
     }
 `;
 
-export default KontaktPage;
+export default PolitykaPage;
