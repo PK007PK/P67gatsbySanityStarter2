@@ -10,7 +10,7 @@ import { FormContact } from 'components/molecules/FormContact/FormContact';
 
 interface Props extends CommonProps {}
 
-const CardContactForm: React.FunctionComponent<Props> = ({ className, style }) => {
+export const CardContactForm: React.FunctionComponent<Props> = ({ className, style }): JSX.Element => {
     const [open, setOpen] = useState(false);
 
     return (
@@ -34,5 +34,3 @@ const CardContactForm: React.FunctionComponent<Props> = ({ className, style }) =
         </CardContactFormStyle>
     );
 };
-
-export default CardContactForm;

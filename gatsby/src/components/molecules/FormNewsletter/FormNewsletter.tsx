@@ -14,7 +14,7 @@ interface Props extends CommonProps {
     onValidated: (formData: any) => any,
 }
 
-export const FormNewsletter: React.FunctionComponent<Props> = ({ status, message, onValidated }) => {
+export const FormNewsletter: React.FunctionComponent<Props> = ({ status, message, onValidated }): JSX.Element => {
     let email: {value: string};
     let name: {value: string};
     const lang = languageCheck();

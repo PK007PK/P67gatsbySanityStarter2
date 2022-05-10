@@ -10,10 +10,9 @@ interface Props extends CommonProps {
     base: string,
 }
 
-export const Pagination: React.FunctionComponent<Props> = (props) => {
+export const Pagination: React.FunctionComponent<Props> = (props): JSX.Element => {
 
     const { pageSize, totalCount, currentPage, base, className, style } = props;
-    
     const totalPages = Math.ceil(totalCount / pageSize);
 
     return (

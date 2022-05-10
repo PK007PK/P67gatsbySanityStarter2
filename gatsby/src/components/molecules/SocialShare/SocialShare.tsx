@@ -25,7 +25,7 @@ interface Props extends CommonProps {
     messengerId: string,
 }
 
-export const SocialShare: React.FunctionComponent<Props> = ({ title, excerpt, messengerId, className }) => {
+export const SocialShare: React.FunctionComponent<Props> = ({ title, excerpt, messengerId, className }): JSX.Element => {
     const lang = languageCheck()
     const texts = socialShareTexts;
     

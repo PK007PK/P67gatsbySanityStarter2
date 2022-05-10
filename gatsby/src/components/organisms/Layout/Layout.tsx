@@ -7,7 +7,7 @@ import GlobalStyles from 'styles/GlobalStyles';
 import Typography from 'styles/Typography';
 
 
-export const Layout: React.FunctionComponent = ({ children }) => (
+export const Layout: React.FunctionComponent = ({ children }): JSX.Element => (
     <>
         <GlobalStyles />
         <Typography />

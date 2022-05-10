@@ -1,7 +1,7 @@
 import React from 'react';
 import { OptionalBlogPostComponentsStyle } from './OptionalBlogPostComponents.style';
 
-import CardContactForm from 'components/molecules/CardContactForm/CardContactForm';
+import { CardContactForm } from 'components/molecules/CardContactForm/CardContactForm';
 import { Newsletter } from 'components/organisms/Newsletter/Newsletter';
 import { SocialShare } from 'components/molecules/SocialShare/SocialShare';
 
@@ -11,7 +11,7 @@ interface Props {
     title: string,
 }
 
-export const OptionalBlogPostComponents: React.FunctionComponent<Props> = ({ data, title, excerpt }) => {
+export const OptionalBlogPostComponents: React.FunctionComponent<Props> = ({ data, title, excerpt }): JSX.Element => {
         
     return (
         <OptionalBlogPostComponentsStyle>

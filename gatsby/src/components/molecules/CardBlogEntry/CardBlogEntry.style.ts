@@ -3,8 +3,8 @@ import { ThemeEntity } from 'styles/Theme';
 import { CommonProps } from 'types/commonProps';
 import { StylingProps } from 'types/stylingProps';
 
-interface Props extends CommonProps, StylingProps {
-    small: boolean,
+interface Props extends CommonProps {
+    small?: boolean,
 }
 
 export const CardBlogEntryStyle = styled.div<Props>`

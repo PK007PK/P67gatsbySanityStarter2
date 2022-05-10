@@ -7,7 +7,7 @@ import { Pagination } from 'components/atoms/Pagination/Pagination';
 import { SectionHero } from 'components/SectionHero/SectionHero';
 import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
 import { Layout } from 'components/organisms/Layout/Layout';
-import CardContactForm from 'components/molecules/CardContactForm/CardContactForm';
+import { CardContactForm } from 'components/molecules/CardContactForm/CardContactForm';
 import { FilterCategory } from 'components/molecules/FilterCategory/FilterCategory';
 import { FilterTags } from 'components/molecules/FilterTags/FilterTags';
 import { HeroTextBlock } from 'components/atoms/HeroTextBlock/HeroTextBlock';

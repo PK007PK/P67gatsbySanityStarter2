@@ -5,10 +5,17 @@ import { CommonProps } from 'types/commonProps';
 import { SanityQuery } from 'types/sanityQuery';
 
 interface Props extends CommonProps {}
+interface QueryStructure {
+    sanityMenuData: {
+        menuItems: {
+            pageSlug: string,
+            pageName: string,
+        }[],
+    },
+}
 
-export const MenuItemsList: React.FunctionComponent<Props> = ({ style, className, onClick }) => {
-
-    const data: SanityQuery = useStaticQuery(graphql`
+export const MenuItemsList: React.FunctionComponent<Props> = ({ style, className, onClick }): JSX.Element => {
+    const data: QueryStructure = useStaticQuery(graphql`
         query QueryMenuItems {
             sanityMenuData {
                 menuItems {

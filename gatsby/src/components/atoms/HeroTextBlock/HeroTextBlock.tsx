@@ -7,7 +7,7 @@ interface Props extends CommonProps {
     description: string,
 }
 
-export const HeroTextBlock: React.FunctionComponent<Props> = ({ style, className, title, description }) => (
+export const HeroTextBlock: React.FunctionComponent<Props> = ({ style, className, title, description }): JSX.Element => (
     <div>
         <HeroTextBlockStyle style={style} className={className}>
             <h1 className="title">{title}</h1>

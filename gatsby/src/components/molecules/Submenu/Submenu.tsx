@@ -30,7 +30,7 @@ interface Props extends CommonProps {
     checkObject?: Object,
 }
 
-export const Submenu: React.FunctionComponent<Props> = ({ data, name, onClick, checkObject }) => {
+export const Submenu: React.FunctionComponent<Props> = ({ data, name, onClick, checkObject }): JSX.Element => {
     
     return (
         <SubmenuStyle>

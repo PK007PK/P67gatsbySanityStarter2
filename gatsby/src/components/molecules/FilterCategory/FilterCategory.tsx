@@ -7,7 +7,7 @@ import { pathCheck } from 'utils/pathCheck';
 import { useFilterCategoryGraphQLData } from './useFilterCategoryGraphQLData';
 import { Link } from 'gatsby';
 
-export const FilterCategory: FC<{location: Location}> = ({ location }) => {
+export const FilterCategory: FC<{location: Location}> = ({ location }): JSX.Element => {
     const counts = categoriesUsed();
     const categories = useFilterCategoryGraphQLData();
     const lang = languageCheck();

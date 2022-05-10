@@ -11,7 +11,7 @@ import { useNewsletterGraphQLData } from './useNewsletterGraphQLData';
 
 interface NewsletterProps extends CommonProps {}
 
-export const Newsletter: React.FunctionComponent<NewsletterProps> = ({ className, style }) => {
+export const Newsletter: React.FunctionComponent<NewsletterProps> = ({ className, style }): JSX.Element => {
     const [open, setOpen] = useState(false);
     const url = useNewsletterGraphQLData();
 
