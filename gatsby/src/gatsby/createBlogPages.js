@@ -2,7 +2,7 @@ import path from 'path';
 
 export async function createBlogPages({ graphql, actions, reporter }) {
     // Define a template for blog post
-    const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
+    const blogPostTemplate = path.resolve(`./src/templates/blog-post.tsx`);
 
     // Get all markdown blog posts sorted by date
     const { data } = await graphql(

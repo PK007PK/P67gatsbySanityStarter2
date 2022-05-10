@@ -7,13 +7,12 @@ import { SocialShare } from 'components/molecules/SocialShare/SocialShare';
 
 interface Props {
     data: number[],
-    name: string,
     excerpt: string,
+    title: string,
 }
 
-export const OptionalBlogPostComponents: React.FunctionComponent<Props> = ({ data, name, excerpt }) => {
-    console.log(data);
-    
+export const OptionalBlogPostComponents: React.FunctionComponent<Props> = ({ data, title, excerpt }) => {
+        
     return (
         <OptionalBlogPostComponentsStyle>
             {data.map((item, i) => {
@@ -21,7 +20,7 @@ export const OptionalBlogPostComponents: React.FunctionComponent<Props> = ({ dat
                     case 0:
                         return <CardContactForm key={i} className="item" />;
                     case 1:
-                        return <SocialShare key={i} className="item" title={name} excerpt={excerpt} messengerID={"1234"} />;
+                        return <SocialShare key={i} className="item" title={title} excerpt={excerpt} messengerID={"1234"} />;
                     case 2:
                         return <Newsletter key={i} className="item" />;
                     default:
