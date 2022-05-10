@@ -1,10 +1,16 @@
 import React from 'react';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
+import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
 import { SectionHeroStyle } from './SectionHero.styles';
 
-const SectionHero = ({ leftComponent, rightComponent }) => {
-    const LeftComponent = leftComponent;
-    const RightComponent = rightComponent;
+interface Props {
+    leftComponent?: React.FunctionComponent,
+    rightComponent?: React.FunctionComponent,
+}
+
+export const SectionHero: React.FunctionComponent<Props> = ({ leftComponent, rightComponent }): JSX.Element => {
+    const LeftComponent = leftComponent as React.ElementType;
+    const RightComponent = rightComponent as React.ElementType;
+
     return (
         <BootsContainer>
             <SectionHeroStyle>
@@ -20,5 +26,3 @@ const SectionHero = ({ leftComponent, rightComponent }) => {
         </BootsContainer>
     );
 };
-
-export default SectionHero;

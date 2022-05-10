@@ -1,29 +1,118 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO } from 'src/components/atoms/SEO/SEO.tsx';
 
-import { Pagination } from 'src/components/atoms/Pagination/Pagination';
-import SectionHero from 'src/components/SectionHero/SectionHero';
-import { Search } from 'src/components/search';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
-
+import { Search } from 'components/search';
+import { SEO } from 'components/atoms/SEO/SEO';
+import { Pagination } from 'components/atoms/Pagination/Pagination';
+import { SectionHero } from 'components/SectionHero/SectionHero';
+import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
 import { Layout } from 'components/organisms/Layout/Layout';
-
 import CardContactForm from 'components/molecules/CardContactForm/CardContactForm';
-
 import { FilterCategory } from 'components/molecules/FilterCategory/FilterCategory';
 import { FilterTags } from 'components/molecules/FilterTags/FilterTags';
 import { HeroTextBlock } from 'components/atoms/HeroTextBlock/HeroTextBlock';
 import { Newsletter } from 'components/organisms/Newsletter/Newsletter';
-import { PostsToDisplay } from '../components/molecules/PostsToDisplay/PostsToDisplay';
+import { PostsToDisplay } from 'components/molecules/PostsToDisplay/PostsToDisplay';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
-const IndexPage = ({ data, pageContext, location }) => {
+interface Props {
+    data: {
+        sanityPageAbout: {
+            title: string,
+            description: string,
+            _rawRichText: string,
+        },
+        category: {
+            nodes: {
+                categories: {
+                    name: string,
+                }[],
+                date: string,
+                image?: {
+                    asset?: {
+                        gatsbyImageData?: IGatsbyImageData,
+                    },
+                },
+                lead: string,
+                name: string,
+                slug: {
+                    current: string,
+                }
+            }[],
+            totalCounts: number,
+        },
+        tag: {
+            nodes: {
+                categories: {
+                    name: string,
+                }[],
+                date: string,
+                image?: {
+                    asset?: {
+                        gatsbyImageData?: IGatsbyImageData,
+                    },
+                },
+                lead: string,
+                name: string,
+                slug: {
+                    current: string,
+                }
+            }[],
+            totalCounts: number,
+        },
+        allPosts: {
+            nodes: {
+                categories: {
+                    name: string,
+                }[],
+                date: string,
+                image?: {
+                    asset?: {
+                        gatsbyImageData?: IGatsbyImageData,
+                    },
+                },
+                lead: string,
+                name: string,
+                slug: {
+                    current: string,
+                },
+            }[],
+            totalCounts: number,
+        },
+        sanityWebsiteSettings: {
+            title: string,
+        },
+        sanityBlogConfig: {
+            pagesInSet: number,
+        },
+        sanityPageHome: {
+            title: string,
+            tags: string[],
+            description: string,
+            image: {
+                asset: {
+                    gatsbyImageData?: IGatsbyImageData,
+                },
+            },
+        }
+    },
+    pageContext: {
+        dirName: string,
+        pageType: string,
+        skip: number,
+        selectionName: string,
+        currentPage: number,
+    },
+    location,
+}
+
+const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location }): JSX.Element => {
     if (pageContext.dirName === undefined) {
         pageContext.dirName = `/`;
     }
-
+    
     const categories = data.category;
     const tags = data.tag;
     const { allPosts } = data;
@@ -45,9 +134,9 @@ const IndexPage = ({ data, pageContext, location }) => {
     }
 
     const { pagesInSet } = data.sanityBlogConfig;
-
     const { title: websiteTitle = 'Component title' } = data.sanityWebsiteSettings;
-
+    
+    console.log('allPosts', allPosts);
     const {
         title,
         tags: heroTags,
@@ -65,7 +154,7 @@ const IndexPage = ({ data, pageContext, location }) => {
                 }`}
             />
             <SectionHero
-                leftComponent={() => <HeroTextBlock title={title} heroTags={heroTags} description={description} />}
+                leftComponent={() => <HeroTextBlock title={title} description={description} />}
             />
             <BootsContainer>
                 <BootsRow id="blog" between>
@@ -76,10 +165,8 @@ const IndexPage = ({ data, pageContext, location }) => {
                             pageSize={pagesInSet}
                             totalCount={postsToDisplay.totalCount}
                             currentPage={pageContext.currentPage || 1}
-                            skip={pageContext.skip}
                             base={pageContext.dirName}
                             style={{ marginBottom: '25px' }}
-                            location={location}
                         />
                     </BootsColumn>
                     <BootsColumn md={4}>
@@ -94,7 +181,6 @@ const IndexPage = ({ data, pageContext, location }) => {
                             pageSize={pagesInSet}
                             totalCount={postsToDisplay.totalCount}
                             currentPage={pageContext.currentPage || 1}
-                            skip={pageContext.skip}
                             base={pageContext.dirName}
                             style={{ marginBottom: '25px' }}
                         />
@@ -108,6 +194,9 @@ const IndexPage = ({ data, pageContext, location }) => {
         </Layout>
     );
 };
+
+
+export default IndexPage;
 
 export const pageQuery = graphql`
     query pagesQuery($selectionName: String, $skip: Int = 0, $pageSize: Int) {
@@ -196,5 +285,3 @@ export const pageQuery = graphql`
         }
     }
 `;
-
-export default IndexPage;

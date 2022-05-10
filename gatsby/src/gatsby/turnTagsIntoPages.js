@@ -2,7 +2,7 @@ import path from 'path';
 
 export async function turnTagsIntoPages({ graphql, actions }) {
     // 1. Get the template
-    const tagTemplate = path.resolve('./src/pages/index.js');
+    const tagTemplate = path.resolve('./src/pages/index.tsx');
 
     // 2. query all the categories
     const { data } = await graphql(`
