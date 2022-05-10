@@ -3,17 +3,48 @@ import { Link, graphql } from 'gatsby';
 import SectionBlogPostHero from 'src/components/SectionBlogPostHero/SectionBlogPostHero';
 import BlockContent from '@sanity/block-content-to-react';
 
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
-import SEO from 'src/components/atoms/SEO/SEO';
+import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
+
 import { ArticleStyling } from 'components/atoms/ArticleStyling/ArticleStyling';
 import { Layout } from 'components/organisms/Layout/Layout';
-import OptionalBlogPostComponents from '../components/OptionalBlogPostComponents/OptionalBlogPostComponents';
+import { SEO } from 'components/atoms/SEO/SEO';
+import { OptionalBlogPostComponents } from 'components/molecules/OptionalBlogPostComponents/OptionalBlogPostComponents';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
-const BlogPostTemplate = ({ data }) => {
+interface Props {
+    data: {
+        previous: {
+            name: string,
+            slug: {
+                current: string,
+            }
+        },
+        next: {
+            name: string,
+            slug: {
+                current: string,
+            }
+        },
+        sanityBlogPosts: {
+            name: string,
+            lead: string, 
+            date: string, 
+            _rawRichText: string, 
+            components: {sanityId: number}[],
+            image?: {
+                asset?: {
+                    gatsbyImageData?: IGatsbyImageData,
+                }
+            }
+        }
+    },
+}
+
+const BlogPostTemplate: React.FunctionComponent<Props> = ({ data }) => {
     const { previous, next } = data;
     const { name, lead, date, _rawRichText, components } = data.sanityBlogPosts;
     const gatsbyImageData = data?.sanityBlogPosts?.image?.asset?.gatsbyImageData;
-
+        
     const textBlock = () => (
         <div>
             <time className="lead">{date}</time>
@@ -21,10 +52,11 @@ const BlogPostTemplate = ({ data }) => {
             <p className="lead">{lead}</p>
         </div>
     );
+
     const componentsArray = components.map((item) => item.sanityId);
     return (
         <Layout>
-            <SEO title={name} description={lead} />
+            <SEO title={name} templateDescription={lead} />
             <ArticleStyling className="blog-post" itemScope itemType="http://schema.org/Article">
                 <SectionBlogPostHero leftComponent={textBlock} data={gatsbyImageData} />
                 <BootsContainer>

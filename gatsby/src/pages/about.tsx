@@ -1,16 +1,26 @@
 import React from 'react';
-
-import SEO from 'src/components/atoms/SEO/SEO.tsx';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/atoms/BootsElements/BootsElements.ts';
-import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
+
 import BlockContent from '@sanity/block-content-to-react';
 
+import { SEO } from 'components/atoms/SEO/SEO';
 import { Layout } from 'components/organisms/Layout/Layout';
 import { ArticleStyling } from 'components/atoms/ArticleStyling/ArticleStyling';
 import { HeroTextBlock } from 'components/atoms/HeroTextBlock/HeroTextBlock';
+import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
+import { SectionHero } from 'components/SectionHero/SectionHero';
 
-const About = ({ data }) => {
+interface Props {
+    data: {
+        sanityPageAbout: {
+            title: string,
+            description: string,
+            _rawRichText: string,
+        }
+    }
+}
+
+const About: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
     const {
         title,
         description,

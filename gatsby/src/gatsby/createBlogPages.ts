@@ -2,7 +2,7 @@ import path from 'path';
 
 export async function createBlogPages({ graphql, actions, reporter }) {
     // Define a template for blog post
-    const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
+    const blogPostTemplate = path.resolve(`./src/templates/blog-post.tsx`);
 
     // Get all markdown blog posts sorted by date
     const { data } = await graphql(
@@ -65,7 +65,7 @@ export async function createBlogPages({ graphql, actions, reporter }) {
     Array.from({ length: pageCount }).forEach((_, i) => {
         actions.createPage({
             path: `/${i + 1}`,
-            component: path.resolve('./src/pages/index.js'),
+            component: path.resolve('./src/pages/index.tsx'),
             // This data is pass to the template when we create it
             context: {
                 skip: i * pageSize,
