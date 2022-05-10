@@ -1,10 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { BootsContainer, BootsRow, BootsColumn } from 'components/atoms/BootsElements/BootsElements';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { FooterStyles } from './Footer.style';
-import { SanityQuery } from 'types/sanityQuery';
 
-export const Footer: React.FunctionComponent = () => {
+interface SanityQuery {
+    sanityWebsiteSettings: {
+        copyright: string,
+    },
+}
+
+export const Footer: React.FunctionComponent = (): JSX.Element => {
     const query: SanityQuery = useStaticQuery(graphql`
         {
             sanityWebsiteSettings {

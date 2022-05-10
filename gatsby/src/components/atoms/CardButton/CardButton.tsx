@@ -9,7 +9,7 @@ interface Props extends CommonProps {
     backgroundColor?: string,
 }
 
-export const CardButton: React.FunctionComponent<Props> = (props) => {
+export const CardButton: React.FunctionComponent<Props> = (props): JSX.Element => {
     const {
         title, 
         iconComponent: IconComponent, 

@@ -6,7 +6,7 @@ import { FilterTagsStyle } from './FilterTags.style';
 import { useFilterTagsGraphQLData } from './useFilterTagsGraphQLData'
 import { tagsUsed } from 'hooks/tagsUsed';
 
-export const FilterTags: FC<{location: Location}> = ({ location }) => {
+export const FilterTags: FC<{location: Location}> = ({ location }): JSX.Element => {
     const counts = tagsUsed();
     const tags = useFilterTagsGraphQLData();
 

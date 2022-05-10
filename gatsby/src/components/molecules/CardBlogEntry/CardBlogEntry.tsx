@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Logo } from 'src/components/atoms/Logo/Logo';
+import { Logo } from 'components/atoms/Logo/Logo';
 import { CardBlogEntryStyle } from './CardBlogEntry.style';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -58,7 +58,7 @@ export const CardBlogEntry: React.FunctionComponent<Props> = React.forwardRef(({
                     <GatsbyImage
                         className="picture"
                         image={gatsbyImageData}
-                        placeholder="blurred"
+                        placeholder='blurred'
                         alt={name}
                         formats={['auto', 'webp']}
                         quality={50}

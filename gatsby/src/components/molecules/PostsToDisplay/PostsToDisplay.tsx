@@ -16,7 +16,7 @@ interface Props {
     data: DataItem[],
 }
 
-export const PostsToDisplay: React.FunctionComponent<Props> = ({ data }) => (
+export const PostsToDisplay: React.FunctionComponent<Props> = ({ data }): JSX.Element => (
     <PostsToDisplayStyles>
         {data
             .filter((item) => item.date !== null)

@@ -3,7 +3,7 @@ import { CommonProps } from 'types/commonProps';
 import { ThemeEntity } from 'styles/Theme';
 import { StylingProps } from 'types/stylingProps';
 
-interface Props extends CommonProps, StylingProps {}
+interface Props extends CommonProps {}
 
 export const MenuItemsListStyle = styled.ul<Props>`
     display: none;

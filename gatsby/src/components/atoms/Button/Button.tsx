@@ -1,17 +1,17 @@
-import { FC } from 'react';
 import styled from 'styled-components';
 import { CommonProps } from 'types/commonProps';
-import { StylingProps } from 'types/stylingProps';
 
-interface Props extends CommonProps, StylingProps {
+interface Props extends CommonProps {
     full?: boolean,
     secondary?: boolean,
+    color?: string,
+    padding?: string,
 }
 
 export const ButtonStyle = styled.button<Props>`
     background-color: ${({ secondary }) => (secondary ? 'var(--colorActiveSecondary)' : 'var(--colorActivePrimary)')};
-    color: ${({ color }: StylingProps) => color || 'white'};
-    padding: ${({ padding }: StylingProps) => padding || ' var(--spacingSmall) var(--spacingMedium)'};
+    color: ${({ color }) => color || 'white'};
+    padding: ${({ padding }) => padding || ' var(--spacingSmall) var(--spacingMedium)'};
     text-shadow: var(--txtShadow);
     font-size: var(--fontSizeLead);
     transition: var(--transitionBasic);

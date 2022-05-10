@@ -3,7 +3,7 @@ import { ThemeEntity } from 'styles/Theme';
 import { CommonProps } from 'types/commonProps';
 import { StylingProps } from 'types/stylingProps';
 
-interface Props extends CommonProps, StylingProps {
+interface Props extends CommonProps {
     isMenuActive?: boolean;
 }
 

@@ -9,7 +9,7 @@ interface QueryStructure {
     }
 }
 
-export const Logo: React.FunctionComponent = () => {
+export const Logo: React.FunctionComponent = (): JSX.Element => {
 
     const {  sanityWebsiteSettings: {copyright = "Abc"} }: QueryStructure = useStaticQuery(graphql`
         {

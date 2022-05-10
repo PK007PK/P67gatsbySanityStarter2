@@ -19,31 +19,31 @@ export const BootsContainer = styled.div<BootsElementsEntity>`
   margin-left: auto;
   margin-right: auto;
 
-  ${({ theme }) => theme.media.xsAbove} {
-    max-width: ${({ theme }) => theme.maxContainerWidth.xs}px;
+  ${({ theme }: {theme: ThemeEntity}) => theme.media.xsAbove} {
+    max-width: ${({ theme }: {theme: ThemeEntity}) => theme.maxContainerWidth.xs}px;
   }
 
-  ${({ theme }) => theme.media.smAbove} {
-    max-width: ${({ theme }) => theme.maxContainerWidth.sm}px;
+  ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
+    max-width: ${({ theme }: {theme: ThemeEntity}) => theme.maxContainerWidth.sm}px;
   }
 
-  ${({ theme }) => theme.media.mdAbove} {
-    max-width: ${({ theme }) => theme.maxContainerWidth.md}px;
+  ${({ theme }: {theme: ThemeEntity}) => theme.media.mdAbove} {
+    max-width: ${({ theme }: {theme: ThemeEntity}) => theme.maxContainerWidth.md}px;
   }
 
-  ${({ theme }) => theme.media.lgAbove} {
-    max-width: ${({ theme }) => theme.maxContainerWidth.lg}px;
+  ${({ theme }: {theme: ThemeEntity}) => theme.media.lgAbove} {
+    max-width: ${({ theme }: {theme: ThemeEntity}) => theme.maxContainerWidth.lg}px;
 
-  ${({ theme }) => theme.media.xlAbove} {
-    max-width: ${({ theme }) => theme.maxContainerWidth.xl}px;
+  ${({ theme }: {theme: ThemeEntity}) => theme.media.xlAbove} {
+    max-width: ${({ theme }: {theme: ThemeEntity}) => theme.maxContainerWidth.xl}px;
   }
   
-  ${({ theme }) => theme.media.xlAbove} {
+  ${({ theme }: {theme: ThemeEntity}) => theme.media.xlAbove} {
     ${({ noXl }) =>
         noXl &&
         `
       {
-        max-width: ${({ theme }) => theme.maxContainerWidth.lg}px;
+        max-width: ${({ theme }: {theme: ThemeEntity}) => theme.maxContainerWidth.lg}px;
       }
     `}
   }
@@ -71,7 +71,7 @@ export const BootsColumn = styled.div<BootsElementsEntity>`
       }
     `}
 
-    ${({ theme }) => theme.media.xsAbove} {
+    ${({ theme }: {theme: ThemeEntity}) => theme.media.xsAbove} {
         ${({ xs }) =>
             xs &&
             `
@@ -81,7 +81,7 @@ export const BootsColumn = styled.div<BootsElementsEntity>`
       }
     `}
     }
-    ${({ theme }) => theme.media.smAbove} {
+    ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
         ${({ sm }) =>
             sm &&
             `
@@ -91,7 +91,7 @@ export const BootsColumn = styled.div<BootsElementsEntity>`
       }
     `}
     }
-    ${({ theme }) => theme.media.mdAbove} {
+    ${({ theme }: {theme: ThemeEntity}) => theme.media.mdAbove} {
         ${({ md }) =>
             md &&
             `
@@ -101,7 +101,7 @@ export const BootsColumn = styled.div<BootsElementsEntity>`
       }
     `}
     }
-    ${({ theme }) => theme.media.lgAbove} {
+    ${({ theme }: {theme: ThemeEntity}) => theme.media.lgAbove} {
         ${({ lg }) =>
             lg &&
             `
@@ -111,7 +111,7 @@ export const BootsColumn = styled.div<BootsElementsEntity>`
       }
     `}
     }
-    ${({ theme }) => theme.media.xlAbove} {
+    ${({ theme }: {theme: ThemeEntity}) => theme.media.xlAbove} {
         ${({ xl }) =>
             xl &&
             `

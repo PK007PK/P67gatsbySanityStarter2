@@ -10,12 +10,12 @@ import { MenuDropDownStyles } from './MenuDropDown.styles';
 import { useMenuDropDownGraphQLData } from './useMenuDropDownGraphQLData';
 import { menuDropDownTexts } from './MenuDropDown.texts';
 
-import { AppContext } from 'src/AppProvider';
+import { AppContext } from 'AppProvider';
 import { categoriesUsed } from '../../../hooks/categoriesUsed';
 import { tagsUsed } from '../../../hooks/tagsUsed';
 import { languageCheck } from 'hooks/languageCheck';
 
-export const MenuDropDown: React.FunctionComponent = () => {
+export const MenuDropDown: React.FunctionComponent = (): JSX.Element => {
 
     const { isMenuActive, diseableMenu } = useContext(AppContext);
     const {

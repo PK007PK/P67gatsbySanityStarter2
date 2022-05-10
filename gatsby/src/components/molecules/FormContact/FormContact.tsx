@@ -6,7 +6,7 @@ import { formContactTexts } from './FormContact.texts';
 import { languageCheck } from 'hooks/languageCheck';
 import { websiteOwnerFormalNameCheck } from 'hooks/websiteOwnerFormalNameCheck';
 
-export const FormContact: React.FunctionComponent = () => {
+export const FormContact: React.FunctionComponent = (): JSX.Element => {
     const lang = languageCheck();
     const formalName = websiteOwnerFormalNameCheck()
     const texts = formContactTexts(formalName);
