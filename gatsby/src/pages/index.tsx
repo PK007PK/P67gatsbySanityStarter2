@@ -17,87 +17,84 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
-interface Props {
-    data: {
-        sanityPageAbout: {
-            title: string,
-            description: string,
-            _rawRichText: string,
-        },
-        category: {
-            nodes: {
-                categories: {
-                    name: string,
-                }[],
-                date: string,
-                image?: {
-                    asset?: {
-                        gatsbyImageData?: IGatsbyImageData,
-                    },
-                },
-                lead: string,
+interface Data {
+    category: {
+        nodes: {
+            categories: {
                 name: string,
-                slug: {
-                    current: string,
-                }
             }[],
-            totalCounts: number,
-        },
-        tag: {
-            nodes: {
-                categories: {
-                    name: string,
-                }[],
-                date: string,
-                image?: {
-                    asset?: {
-                        gatsbyImageData?: IGatsbyImageData,
-                    },
-                },
-                lead: string,
-                name: string,
-                slug: {
-                    current: string,
-                }
-            }[],
-            totalCounts: number,
-        },
-        allPosts: {
-            nodes: {
-                categories: {
-                    name: string,
-                }[],
-                date: string,
-                image?: {
-                    asset?: {
-                        gatsbyImageData?: IGatsbyImageData,
-                    },
-                },
-                lead: string,
-                name: string,
-                slug: {
-                    current: string,
-                },
-            }[],
-            totalCounts: number,
-        },
-        sanityWebsiteSettings: {
-            title: string,
-        },
-        sanityBlogConfig: {
-            pagesInSet: number,
-        },
-        sanityPageHome: {
-            title: string,
-            tags: string[],
-            description: string,
-            image: {
-                asset: {
+            date: string,
+            image?: {
+                asset?: {
                     gatsbyImageData?: IGatsbyImageData,
                 },
             },
-        }
+            lead: string,
+            name: string,
+            slug: {
+                current: string,
+            }
+        }[],
+        totalCounts: number,
     },
+    tag: {
+        nodes: {
+            categories: {
+                name: string,
+            }[],
+            date: string,
+            image?: {
+                asset?: {
+                    gatsbyImageData?: IGatsbyImageData,
+                },
+            },
+            lead: string,
+            name: string,
+            slug: {
+                current: string,
+            }
+        }[],
+        totalCounts: number,
+    },
+    allPosts: {
+        nodes: {
+            categories: {
+                name: string,
+            }[],
+            date: string,
+            image?: {
+                asset?: {
+                    gatsbyImageData?: IGatsbyImageData,
+                },
+            },
+            lead: string,
+            name: string,
+            slug: {
+                current: string,
+            },
+        }[],
+        totalCounts: number,
+    },
+    sanityWebsiteSettings: {
+        title: string,
+    },
+    sanityBlogConfig: {
+        pagesInSet: number,
+    },
+    sanityPageHome: {
+        title: string,
+        tags: string[],
+        description: string,
+        image: {
+            asset: {
+                gatsbyImageData?: IGatsbyImageData,
+            },
+        },
+    },
+};
+
+interface Props {
+    data: Data,
     pageContext: {
         dirName: string,
         pageType: string,
@@ -105,7 +102,7 @@ interface Props {
         selectionName: string,
         currentPage: number,
     },
-    location,
+    location: Location,
 }
 
 const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location }): JSX.Element => {
