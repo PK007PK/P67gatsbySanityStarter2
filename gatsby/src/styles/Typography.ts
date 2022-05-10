@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { ThemeEntity } from './Theme';
 
 const Typography = createGlobalStyle`
 
@@ -15,7 +16,7 @@ const Typography = createGlobalStyle`
   h1 {
     font-size: var(--fontSizeBig1);
 
-    ${({ theme }) => theme.media.smAbove} {
+    ${({ theme }: {theme: ThemeEntity}) => theme.media.smAbove} {
       font-size: var(--fontSizeBig2);
     }
     
