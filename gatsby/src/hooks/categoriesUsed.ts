@@ -1,7 +1,19 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-export function categoriesUsed() {
-    const data = useStaticQuery(graphql`
+type NodeEntity = {
+    categories: {
+        name: string,
+    }[]
+}
+
+interface StaticQueryEntity {
+    allSanityBlogPosts: {
+        nodes: NodeEntity[]
+    }
+}
+
+export function categoriesUsed(): {} {
+    const data: StaticQueryEntity = useStaticQuery(graphql`
         {
             allSanityBlogPosts {
                 nodes {
@@ -13,7 +25,7 @@ export function categoriesUsed() {
         }
     `);
 
-    const allPostsCategories = [];
+    const allPostsCategories: string[] = [];
     data.allSanityBlogPosts.nodes.forEach((post) => {
         post.categories.forEach((item) => allPostsCategories.push(item.name));
     });
