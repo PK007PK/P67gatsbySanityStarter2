@@ -29,4 +29,8 @@ export const CardButtonStyles = styled.button<Props>`
         height: 50px;
         margin-right: 10px;
     }
+
+    .title {
+        margin: 0;
+    }
 `;

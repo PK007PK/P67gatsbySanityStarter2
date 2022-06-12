@@ -30,7 +30,7 @@ export const CardButton: React.FunctionComponent<Props> = (props): JSX.Element =
             style={style}
         >
             {IconComponent && <IconComponent />}
-            <h3>{title}</h3>
+            <h3 className="title">{title}</h3>
             {children}
         </CardButtonStyles>
     )
