@@ -4,7 +4,6 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 // Then we give our schema to the builder and provide the result to Sanity
 
-import websiteSettings from './websiteSettings';
 import blogConfig from './blogConfig';
 import pageHome from './pageHome';
 import thirdPartyServicesIntegration from './thirdPartyServicesIntegration';
@@ -23,6 +22,7 @@ import testimonials from './testimonials';
 import testimonialItem from './testimonialItem';
 import menuData from './menuData';
 import menuItem from './menuItem';
+import { websiteSettings } from './websiteSettings';
 
 export default createSchema({
   // We name our schema

@@ -14,6 +14,7 @@ import { HeroTextBlock } from 'components/atoms/HeroTextBlock/HeroTextBlock';
 import { Newsletter } from 'components/organisms/Newsletter/Newsletter';
 import { PostsToDisplay } from 'components/molecules/PostsToDisplay/PostsToDisplay';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
+import { SanityPagesBasicStructure } from 'types/SanityPagesBasicStructure';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
@@ -81,16 +82,7 @@ interface Data {
     sanityBlogConfig: {
         pagesInSet: number,
     },
-    sanityPageHome: {
-        title: string,
-        tags: string[],
-        description: string,
-        image: {
-            asset: {
-                gatsbyImageData?: IGatsbyImageData,
-            },
-        },
-    },
+    sanityPageHome: SanityPagesBasicStructure,
 };
 
 interface Props {
@@ -133,10 +125,8 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
     const { pagesInSet } = data.sanityBlogConfig;
     const { title: websiteTitle = 'Component title' } = data.sanityWebsiteSettings;
     
-    console.log('allPosts', allPosts);
     const {
         title,
-        tags: heroTags,
         description,
         image: {
             asset: { gatsbyImageData },
@@ -195,90 +185,3 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
 
 export default IndexPage;
 
-export const pageQuery = graphql`
-    query pagesQuery($selectionName: String, $skip: Int = 0, $pageSize: Int) {
-        sanityWebsiteSettings {
-            title
-        }
-        sanityBlogConfig {
-            pagesInSet
-        }
-        sanityPageHome {
-            title
-            tags
-            description
-            image {
-                asset {
-                    gatsbyImageData(width: 400)
-                }
-            }
-        }
-        category: allSanityBlogPosts(
-            limit: $pageSize
-            skip: $skip
-            sort: { order: DESC, fields: date }
-            filter: { categories: { elemMatch: { name: { eq: $selectionName } } } }
-        ) {
-            totalCount
-            nodes {
-                name
-                lead
-                date(formatString: "")
-                slug {
-                    current
-                }
-                categories {
-                    name
-                }
-                image {
-                    asset {
-                        gatsbyImageData(width: 400)
-                    }
-                }
-            }
-        }
-        tag: allSanityBlogPosts(
-            limit: $pageSize
-            skip: $skip
-            sort: { order: DESC, fields: date }
-            filter: { tags: { elemMatch: { name: { eq: $selectionName } } } }
-        ) {
-            totalCount
-            nodes {
-                name
-                lead
-                date(formatString: "")
-                slug {
-                    current
-                }
-                categories {
-                    name
-                }
-                image {
-                    asset {
-                        gatsbyImageData(width: 400)
-                    }
-                }
-            }
-        }
-        allPosts: allSanityBlogPosts(limit: $pageSize, skip: $skip, sort: { order: DESC, fields: date }) {
-            totalCount
-            nodes {
-                name
-                lead
-                date(formatString: "")
-                slug {
-                    current
-                }
-                categories {
-                    name
-                }
-                image {
-                    asset {
-                        gatsbyImageData(width: 400)
-                    }
-                }
-            }
-        }
-    }
-`;
