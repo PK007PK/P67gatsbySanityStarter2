@@ -15,6 +15,7 @@ import { Newsletter } from 'components/organisms/Newsletter/Newsletter';
 import { PostsToDisplay } from 'components/molecules/PostsToDisplay/PostsToDisplay';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import { SanityPagesBasicStructure } from 'types/SanityPagesBasicStructure';
+import { InfiniteScroll } from 'components/atoms/InfiniteScroll/InfiniteScroll';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
@@ -158,7 +159,7 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
                     </BootsColumn>
                     <BootsColumn md={4}>
                         <h3 style={{ marginTop: 'var(--spacingSmall)', textAlign: 'center' }}>Search site</h3>
-                        <Search staticInput indices={searchIndices} />
+                        {/* <Search staticInput indices={searchIndices} /> */}
                     </BootsColumn>
                 </BootsRow>
                 <BootsRow id="blog" between>
@@ -175,6 +176,11 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
                     <BootsColumn md={4}>
                         <Newsletter style={{ marginBottom: '50px' }} />
                         <CardContactForm />
+                    </BootsColumn>
+                </BootsRow>
+                <BootsRow>
+                    <BootsColumn>
+                        <InfiniteScroll title="Infinite scroll" />
                     </BootsColumn>
                 </BootsRow>
             </BootsContainer>

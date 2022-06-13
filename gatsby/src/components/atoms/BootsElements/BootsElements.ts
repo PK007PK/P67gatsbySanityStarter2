@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { ThemeEntity } from 'styles/Theme';
+import { CommonProps } from 'types/commonProps';
 
-interface BootsElementsEntity {
+interface BootsElementsEntity extends CommonProps {
   noXl?: boolean,
   xxs?: number,
   xs?: number,
