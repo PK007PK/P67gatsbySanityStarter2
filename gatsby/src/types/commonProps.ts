@@ -3,5 +3,5 @@ export interface CommonProps {
     className?: string,
     onClick?: () => void,
     children?: React.ReactNode,
-    ref?: any,
+    ref?: React.ForwardedRef<HTMLDivElement>
 }

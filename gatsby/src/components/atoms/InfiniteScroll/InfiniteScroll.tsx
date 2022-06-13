@@ -8,25 +8,18 @@ interface Props extends CommonProps {
 }
 
 interface ApiResp {
-    valid: string;
-    messages: string[];
-    iban: string;
-    bankData: {
-        bankCode: string,
-        name: string,
-        zip: string,
-        city: string,
-        bic: string,
-    }
+    id: number,
+    name: string,
+    image_url: string,
 }
 
 interface ProductCardProps {
     name: string,
     image_url: string,
-    ref?: any,
+    ref?: React.ForwardedRef<HTMLDivElement>,
 }
 
-const ProductCard: React.FunctionComponent<ProductCardProps> = React.forwardRef((props, ref) => {
+const ProductCard: React.FunctionComponent<ProductCardProps> = React.forwardRef((props, ref: React.ForwardedRef<HTMLDivElement>) => {
     const {name, image_url} = props;
     return (
         <BootsColumn 
