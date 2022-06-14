@@ -16,6 +16,7 @@ import { PostsToDisplay } from 'components/molecules/PostsToDisplay/PostsToDispl
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import { SanityPagesBasicStructure } from 'types/SanityPagesBasicStructure';
 import { InfiniteScroll } from 'components/atoms/InfiniteScroll/InfiniteScroll';
+import { Accordion } from 'components/atoms/Accordion/Accordion';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
@@ -176,6 +177,7 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
                     <BootsColumn md={4}>
                         <Newsletter style={{ marginBottom: '50px' }} />
                         <CardContactForm />
+                        <Accordion title="Accordion" />
                     </BootsColumn>
                 </BootsRow>
                 <BootsRow>
@@ -191,3 +193,90 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
 
 export default IndexPage;
 
+export const pageQuery = graphql`
+    query pagesQuery($selectionName: String, $skip: Int = 0, $pageSize: Int) {
+        sanityWebsiteSettings {
+            title
+        }
+        sanityBlogConfig {
+            pagesInSet
+        }
+        sanityPageHome {
+            title
+            tags
+            description
+            image {
+                asset {
+                    gatsbyImageData(width: 400)
+                }
+            }
+        }
+        category: allSanityBlogPosts(
+            limit: $pageSize
+            skip: $skip
+            sort: { order: DESC, fields: date }
+            filter: { categories: { elemMatch: { name: { eq: $selectionName } } } }
+        ) {
+            totalCount
+            nodes {
+                name
+                lead
+                date(formatString: "")
+                slug {
+                    current
+                }
+                categories {
+                    name
+                }
+                image {
+                    asset {
+                        gatsbyImageData(width: 400)
+                    }
+                }
+            }
+        }
+        tag: allSanityBlogPosts(
+            limit: $pageSize
+            skip: $skip
+            sort: { order: DESC, fields: date }
+            filter: { tags: { elemMatch: { name: { eq: $selectionName } } } }
+        ) {
+            totalCount
+            nodes {
+                name
+                lead
+                date(formatString: "")
+                slug {
+                    current
+                }
+                categories {
+                    name
+                }
+                image {
+                    asset {
+                        gatsbyImageData(width: 400)
+                    }
+                }
+            }
+        }
+        allPosts: allSanityBlogPosts(limit: $pageSize, skip: $skip, sort: { order: DESC, fields: date }) {
+            totalCount
+            nodes {
+                name
+                lead
+                date(formatString: "")
+                slug {
+                    current
+                }
+                categories {
+                    name
+                }
+                image {
+                    asset {
+                        gatsbyImageData(width: 400)
+                    }
+                }
+            }
+        }
+    }
+`;
