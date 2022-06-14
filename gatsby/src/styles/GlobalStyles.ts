@@ -5,10 +5,11 @@ const colors = `
     --colorLightGray: #F4F4F4;
     --colorMediumGray: #E9ECEF;
     --colorDarkGray: #343A40;
-    --colorActive: #2E7D32;
+    --colorActive: #ea5825;
     --colorActivePrimary: #006064;
     --colorActiveSecondary: #00BFA5;
     --colorBlack: #00000;
+    
 `;
 
 const spacings = `

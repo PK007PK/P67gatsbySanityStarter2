@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { ThemeEntity } from 'styles/Theme';
 
 export const CardContactFormStyle = styled.div`
+    margin-bottom: var(--spacingMedium);
     position: relative;
 
     .openingButton {
@@ -42,10 +43,6 @@ export const CardContactFormStyle = styled.div`
 
         border-radius: var(--borderRadius);
         box-shadow: ${({ theme }: {theme: ThemeEntity}) => theme.elevation.dp4};
-    }
-
-    .title {
-        margin-bottom: var(--spacingRegular);
     }
 
     .openBtn {

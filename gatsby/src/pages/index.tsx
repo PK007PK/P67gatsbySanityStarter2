@@ -17,6 +17,7 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 import { SanityPagesBasicStructure } from 'types/SanityPagesBasicStructure';
 import { InfiniteScroll } from 'components/atoms/InfiniteScroll/InfiniteScroll';
 import { Accordion } from 'components/atoms/Accordion/Accordion';
+import { accordionTemplateData } from 'data/accordionTemplateData';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
@@ -177,7 +178,7 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
                     <BootsColumn md={4}>
                         <Newsletter style={{ marginBottom: '50px' }} />
                         <CardContactForm />
-                        <Accordion title="Accordion" />
+                        <Accordion title="Accordion" data={accordionTemplateData} />
                     </BootsColumn>
                 </BootsRow>
                 <BootsRow>
