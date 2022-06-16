@@ -1,5 +1,5 @@
-import { CardButtonStyles } from "./CardButton.styles";
-import React, { FC } from 'react'
+import { ButtonCardLikeStyles } from "./ButtonCardLike.styles";
+import React from 'react'
 import { CommonProps } from "types/commonProps";
 
 interface Props extends CommonProps {
@@ -9,7 +9,7 @@ interface Props extends CommonProps {
     backgroundColor?: string,
 }
 
-export const CardButton: React.FunctionComponent<Props> = (props): JSX.Element => {
+export const ButtonCardLike: React.FunctionComponent<Props> = (props): JSX.Element => {
     const {
         title, 
         iconComponent: IconComponent, 
@@ -22,7 +22,7 @@ export const CardButton: React.FunctionComponent<Props> = (props): JSX.Element =
     } = props;
 
     return (
-        <CardButtonStyles 
+        <ButtonCardLikeStyles 
             onClick={onClick} 
             color={color} 
             backgroundColor={backgroundColor}
@@ -32,6 +32,6 @@ export const CardButton: React.FunctionComponent<Props> = (props): JSX.Element =
             {IconComponent && <IconComponent />}
             <h3 className="title">{title}</h3>
             {children}
-        </CardButtonStyles>
+        </ButtonCardLikeStyles>
     )
 }

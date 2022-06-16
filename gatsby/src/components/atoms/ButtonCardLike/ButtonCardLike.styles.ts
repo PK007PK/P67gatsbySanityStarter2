@@ -7,7 +7,7 @@ interface Props extends CommonProps {
     backgroundColor?: string,
 }
 
-export const CardButtonStyles = styled.button<Props>`
+export const ButtonCardLikeStyles = styled.button<Props>`
     border-radius: var(--borderRadius);
     font-size: var(--fontSizeLead);
     transition: var(--transitionBasic);

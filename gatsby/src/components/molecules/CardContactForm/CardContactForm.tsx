@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IoIosContact } from '@react-icons/all-files/io/IoIosContact';
 
 import { CardContactFormStyle } from './CardContactForm.style';
-import { CardButton } from 'components/atoms/CardButton/CardButton';
+import { ButtonCardLike } from 'components/atoms/ButtonCardLike/ButtonCardLike';
 import { CommonProps } from 'types/commonProps';
 import { languageCheck } from 'hooks/languageCheck'
 import { CardContactFormTexts } from './CardContactForm.texts';
@@ -16,7 +16,7 @@ export const CardContactForm: React.FunctionComponent<Props> = ({ className, sty
     return (
         <CardContactFormStyle style={style} className={className}>
             {!open && (
-                <CardButton 
+                <ButtonCardLike 
                     title="Contact form"
                     iconComponent={()=><IoIosContact className="icon" />}
                     onClick={() => setOpen(!open)}

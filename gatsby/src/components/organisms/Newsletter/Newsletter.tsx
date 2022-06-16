@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
-import { CardButton } from 'components/atoms/CardButton/CardButton';
+import { ButtonCardLike } from 'components/atoms/ButtonCardLike/ButtonCardLike';
 
 import { GiLetterBomb } from '@react-icons/all-files/gi/GiLetterBomb';
 import { NewsletterStyle } from './NewsletterStyle';
@@ -18,7 +18,7 @@ export const Newsletter: React.FunctionComponent<NewsletterProps> = ({ className
     return (
         <div style={style} className={className}>
             {!open && (
-                <CardButton
+                <ButtonCardLike
                     title="Newsletter"
                     iconComponent={() => <GiLetterBomb className="icon" />}
                     onClick={() => setOpen(!open)}
