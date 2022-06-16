@@ -56,7 +56,6 @@ export const InfiniteScroll: React.FunctionComponent<Props> = ({title}): JSX.Ele
         (async (): Promise<void> => {
             const resp = await fetch(`https://api.punkapi.com/v2/beers?page=1&per_page=6`);
             const data: ApiResp[] = await resp.json();
-            console.log(data);
             setItems([...data]);
         })()
     },[])

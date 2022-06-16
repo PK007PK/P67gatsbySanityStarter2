@@ -1,11 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Logo } from 'components/atoms/Logo/Logo';
 import { CardBlogEntryStyle } from './CardBlogEntry.style';
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
     data: {
@@ -25,34 +21,13 @@ interface Props {
     small?: boolean,
 }
 
-export const CardBlogEntry: React.FunctionComponent<Props> = React.forwardRef(({ data, small }) => {
+export const CardBlogEntry: React.FunctionComponent<Props> = ({ data, small }) => {
     const { name, date } = data;
 
     const gatsbyImageData = data?.image?.asset?.gatsbyImageData;
 
-    let wrapper = useRef(null);
-    useEffect(() => {
-        gsap.set(wrapper, { autoAlpha: 0 });
-
-        const cardAnimation = gsap.timeline({ defaults: { ease: 'power3.inOut' } }).fromTo(
-            wrapper,
-            { autoAlpha: 0 },
-            {
-                duration: 0.7,
-                autoAlpha: 1,
-            }
-        );
-
-
-        ScrollTrigger.create({
-            trigger: wrapper,
-            animation: cardAnimation,
-            start: 'center bottom',
-        });
-    }, []);
-
     return (
-        <CardBlogEntryStyle small={small} ref={(el) => (wrapper = el)}>
+        <CardBlogEntryStyle small={small}>
             <div className="imgWrapper">
                 {gatsbyImageData ? (
                     <GatsbyImage
@@ -75,4 +50,4 @@ export const CardBlogEntry: React.FunctionComponent<Props> = React.forwardRef(({
             </div>
         </CardBlogEntryStyle>
     );
-});
+};
