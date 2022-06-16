@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { CommonProps } from 'types/commonProps';
 import { BootsColumn, BootsRow } from '../BootsElements/BootsElements';
+import { Title } from '../Title/Title';
 import { InfiniteScrollStyle } from './InfiniteScroll.style';
 
 interface Props extends CommonProps {
@@ -40,9 +41,7 @@ const ProductCard: React.FunctionComponent<ProductCardProps> = React.forwardRef(
                     maxHeight: "300px",
                 }}
             />
-            <h3 style={{
-                textAlign: "center",
-            }}>{name}</h3>
+            <Title as="h3" center={true}>{name}</Title>
         </BootsColumn>
     )
 })
@@ -72,7 +71,7 @@ export const InfiniteScroll: React.FunctionComponent<Props> = ({title}): JSX.Ele
             setItems(i => [...i, ...data]);
             setPage(page + 1);
         })()
-    }, [page]) 
+    }, [page, items]) 
 
     useEffect(() => {
         //Create IO
@@ -100,7 +99,7 @@ export const InfiniteScroll: React.FunctionComponent<Props> = ({title}): JSX.Ele
 
     return (
         <InfiniteScrollStyle>
-            <h2>{title}</h2>
+            <Title as="h2">{title}</Title>
             <BootsRow>
             {items.map((item, i) => {
                 if (i === items.length - 1) {
