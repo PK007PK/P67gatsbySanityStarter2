@@ -5,16 +5,23 @@ import { SectionHeroStyle } from './SectionHero.styles';
 interface Props {
     leftComponent?: React.FunctionComponent,
     rightComponent?: React.FunctionComponent,
+    Ycenter?: boolean,
 }
 
-export const SectionHero: React.FunctionComponent<Props> = ({ leftComponent, rightComponent }): JSX.Element => {
+export const SectionHero: React.FunctionComponent<Props> = (props): JSX.Element => {
+    const { 
+        leftComponent, 
+        rightComponent,
+        Ycenter,
+    } = props;
+
     const LeftComponent = leftComponent as React.ElementType;
     const RightComponent = rightComponent as React.ElementType;
 
     return (
         <BootsContainer>
             <SectionHeroStyle>
-                <BootsRow>
+                <BootsRow Ycenter={Ycenter}>
                     <BootsColumn xs={12} sm={9} md={6}>
                         {leftComponent && <LeftComponent />}
                     </BootsColumn>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import { Search } from 'components/search';
 import { SEO } from 'components/atoms/SEO/SEO';
@@ -136,6 +137,9 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
         },
     } = data.sanityPageHome;
 
+    const TextForHeader = () => <HeroTextBlock title={title} description={description} />
+    const PictureForHeader = () => <GatsbyImage style={{width: "100%"}} image={gatsbyImageData} alt="" />
+
     return (
         <Layout>
             <SEO
@@ -144,7 +148,13 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
                 }`}
             />
             <SectionHero
-                leftComponent={() => <HeroTextBlock title={title} description={description} />}
+                Ycenter={true}
+                leftComponent={
+                    () => <TextForHeader />
+                }
+                rightComponent={
+                    () => <PictureForHeader />
+                }
             />
             <BootsContainer>
                 <BootsRow id="blog" between>
@@ -190,7 +200,6 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
         </Layout>
     );
 };
-
 
 export default IndexPage;
 

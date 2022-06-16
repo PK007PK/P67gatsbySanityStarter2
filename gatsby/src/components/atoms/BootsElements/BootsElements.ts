@@ -11,6 +11,7 @@ interface BootsElementsEntity extends CommonProps {
   lg?: number,
   xl?: number,
   between?: boolean,
+  Ycenter?: boolean,
 }
 
 export const BootsContainer = styled.div<BootsElementsEntity>`
@@ -57,6 +58,7 @@ export const BootsRow = styled.div<BootsElementsEntity>`
     margin: 0px;
     position: relative;
     justify-content: ${({ between }) => (between ? 'space-between' : 'flex-start')};
+    align-items: ${({ Ycenter }) => (Ycenter ? 'center' : 'flex-start')};
 `;
 
 export const BootsColumn = styled.div<BootsElementsEntity>`
