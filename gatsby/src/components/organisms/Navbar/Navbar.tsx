@@ -34,7 +34,7 @@ export const Navbar: React.FunctionComponent = (): JSX.Element => {
 
                             <div className="desktopLinksWrapper">
                                 <MenuItemsList onClick={diseableMenu} />
-                                {/* <Search indices={searchIndices} /> */}
+                                <Search indices={searchIndices} />
                             </div>
 
                             <div className="burgerWrapper">
