@@ -34,14 +34,4 @@ export default {
       of: [{ type: 'block' }, { type: 'image' }],
     },
   ],
-  initialValue: {
-    title: 'Default About page title',
-    description: 'Default description text',
-    richText: 'Default main content text',
-    image: {
-      asset: {
-        gatsbyImageData: './placeholder.png',
-      },
-    },
-  },
 };

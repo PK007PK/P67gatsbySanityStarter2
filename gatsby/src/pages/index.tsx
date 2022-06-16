@@ -161,7 +161,7 @@ const IndexPage: React.FunctionComponent<Props> = ({ data, pageContext, location
                     </BootsColumn>
                     <BootsColumn md={4}>
                         <h3 style={{ marginTop: 'var(--spacingSmall)', textAlign: 'center' }}>Search site</h3>
-                        {/* <Search staticInput indices={searchIndices} /> */}
+                        <Search staticInput indices={searchIndices} />
                     </BootsColumn>
                 </BootsRow>
                 <BootsRow id="blog" between>
